@@ -36,6 +36,7 @@
       --soft-gray: #F9F7F4;
       --text-dark: #2A2520;
       --text-medium: #5C5548;
+      --discount-red: #C75C3E;
     }
 
     .gold-text { color: var(--gold); }
@@ -98,6 +99,12 @@
       border: 1px solid rgba(200, 168, 107, 0.5);
       margin-top: 20px;
     }
+    .price-original {
+      font-size: 1rem;
+      text-decoration: line-through;
+      color: #b0a088;
+      margin-right: 8px;
+    }
     .price-amount {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.5rem;
@@ -108,6 +115,14 @@
       font-size: 0.8rem;
       letter-spacing: 2px;
       color: var(--gold-light);
+    }
+    .discount-badge {
+      background: var(--discount-red);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      font-weight: 600;
     }
     .btn-outline-light {
       background: var(--gold);
@@ -288,7 +303,7 @@
       color: var(--gold-dark);
     }
 
-    /* Price Box */
+    /* Price Box con promoción */
     .price-big {
       background: linear-gradient(135deg, #FEFAF3, #FFFCF8);
       border-radius: 32px;
@@ -300,7 +315,23 @@
       font-family: 'Cormorant Garamond', serif;
       font-size: 3.5rem;
       font-weight: 700;
-      color: var(--gold-dark);
+      color: var(--discount-red);
+    }
+    .price-original-big {
+      font-size: 1.2rem;
+      text-decoration: line-through;
+      color: #9b8a70;
+      margin-right: 12px;
+    }
+    .promo-badge {
+      background: var(--discount-red);
+      color: white;
+      display: inline-block;
+      padding: 4px 16px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-top: 8px;
     }
 
     /* PayPal Section */
@@ -368,6 +399,13 @@
     .grid-2col { display: flex; flex-wrap: wrap; gap: 40px; }
     .contact-item a { text-decoration: none; color: var(--text-dark); }
     .contact-item a:hover { color: var(--gold); }
+    .start-date {
+      background: rgba(200, 168, 107, 0.15);
+      padding: 8px 20px;
+      border-radius: 40px;
+      display: inline-block;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
@@ -375,18 +413,19 @@
 <!-- HERO BANNER -->
 <div class="hero-banner">
   <div class="hero-banner-content">
-    <span class="hero-badge-gold"><i class="fas fa-wine-bottle"></i>  ACADEMIA DEL VINO · DESDE 2020</span>
+    <span class="hero-badge-gold"><i class="fas fa-wine-bottle"></i>  ACADEMIA DEL VINO · DESDE 2026</span>
     <h1>Diplomado en Ciencia<br>y Tecnología del Vino</h1>
     <p class="subhead">Formación de élite con rigor químico, microbiológico y sensorial. Dirigido por José Guerrero, químico y consultor internacional con más de 6 años formando profesionales en bodegas y cervecerías.</p>
     <div class="price-card-hero">
       <div>
-        <div class="price-label">Inversión total</div>
-        <div class="price-amount">$7,500 <small>MXN</small></div>
+        <div class="price-label">Precio regular</div>
+        <div><span class="price-original">$8,500 MXN</span> <span class="price-amount">$3,000 MXN</span></div>
+        <div class="discount-badge" style="margin-top: 5px;">🔥 Promoción de lanzamiento</div>
       </div>
       <div>
         <a href="#pago-paypal" class="btn-outline-light"><i class="fab fa-paypal"></i> Inscribirme ahora</a>
       </div>
-      <div style="font-size:0.7rem; color:#e6d5b3;">*Pago único · Certificado incluido · Acceso vitalicio</div>
+      <div style="font-size:0.7rem; color:#e6d5b3;">*Pago único · Certificado incluido · Acceso a videos grabados</div>
     </div>
   </div>
 </div>
@@ -434,17 +473,17 @@
       <div class="divider-gold" style="margin: 20px auto 0;"></div>
     </div>
     <div class="benefits-grid">
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Clases en vivo + Grabación</h3><p>Acceso de por vida a todas las sesiones. Aprende a tu ritmo con repeticiones ilimitadas.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-flask"></i></div><h3>Laboratorio práctico virtual</h3><p>Casos reales de análisis químico, microbiológico y resolución de problemas en bodega.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-certificate"></i></div><h3>Certificado con aval técnico</h3><p>Diploma digital firmado por José Guerrero, respaldando tu especialización.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Clases en vivo + Grabación</h3><p>Acceso a los videos grabados por si no puedes asistir en vivo. Repasa las sesiones cuando quieras.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-flask"></i></div><h3>Casos prácticos reales</h3><p>Análisis de situaciones reales en bodega, resolución de problemas fermentativos y control de calidad.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-certificate"></i></div><h3>Certificado con aval técnico</h3><p>Diploma digital firmado por José Guerrero, respaldando tu especialización en Ciencia del Vino.</p></div>
       <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-chart-line"></i></div><h3>Proyecto final integrador</h3><p>Diseña tu propio plan de vinificación y control de calidad con retroalimentación personalizada.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-users"></i></div><h3>Comunidad de egresados</h3><p>Acceso a grupo exclusivo, networking con profesionales del sector vitivinícola.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-file-alt"></i></div><h3>Material descargable premium</h3><p>Manual técnico + formatos de laboratorio + tablas de interpretación analítica.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-users"></i></div><h3>Comunidad de egresados</h3><p>Acceso a grupo exclusivo, networking con profesionales del sector vitivinícola y cervecero.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-video"></i></div><h3>Acceso a videos grabados</h3><p>Si no puedes asistir a la clase en vivo, tendrás acceso a todas las grabaciones para estudiar a tu ritmo.</p></div>
     </div>
   </div>
 </div>
 
-<!-- DIPLOMADO INFO + PRECIO -->
+<!-- DIPLOMADO INFO + PRECIO con fecha de inicio -->
 <div class="section">
   <div class="container">
     <div class="section-subtitle">Programa de Especialización</div>
@@ -452,14 +491,18 @@
     <div class="divider-gold"></div>
     <div class="flex-between">
       <div>
-        <p><i class="fas fa-calendar-alt gold-text"></i> <strong>12 semanas</strong> · Modalidad online (clase semanal 2–3 h) · Material descargable · Acceso de por vida</p>
+        <p><i class="fas fa-calendar-alt gold-text"></i> <strong>12 semanas</strong> · Modalidad online (clase semanal 2–3 h) · Acceso a videos grabados</p>
         <p style="margin-top: 12px;"><i class="fas fa-trophy gold-text"></i> Certificado digital avalado + respaldo técnico de José Guerrero</p>
+        <div class="start-date" style="margin-top: 20px;">
+          <i class="fas fa-calendar-check gold-text"></i> <strong>Inicio del curso: 1 de abril de 2026</strong>
+        </div>
       </div>
       <div class="price-big">
-        <span style="font-size: 0.8rem; letter-spacing: 2px;">INVERSIÓN</span>
-        <div class="price-number">$7,500 MXN</div>
-        <div style="font-size: 0.75rem;">*Pago único · Incluye manual, formatos y certificado</div>
-        <a href="#pago-paypal" style="display: inline-block; margin-top: 16px; background: var(--gold); color: white; padding: 10px 32px; border-radius: 50px; text-decoration: none; font-weight: 600;">Comprar ahora</a>
+        <span style="font-size: 0.8rem; letter-spacing: 2px;">INVERSIÓN CON PROMOCIÓN</span>
+        <div><span class="price-original-big">$8,500 MXN</span> <span class="price-number">$3,000 MXN</span></div>
+        <div class="promo-badge">🔥 Oferta especial de lanzamiento</div>
+        <div style="font-size: 0.75rem; margin-top: 12px;">*Pago único · Incluye certificado y acceso a videos grabados</div>
+        <a href="#pago-paypal" style="display: inline-block; margin-top: 16px; background: var(--gold); color: white; padding: 10px 32px; border-radius: 50px; text-decoration: none; font-weight: 600;">Aprovechar oferta</a>
       </div>
     </div>
   </div>
@@ -555,8 +598,8 @@
     <!-- Incluye adicional -->
     <div style="background: white; border-radius: 32px; padding: 40px; margin-top: 50px; border: 1px solid rgba(200,168,107,0.25);">
       <div style="display: flex; flex-wrap: wrap; gap: 40px;">
-        <div style="flex:1"><i class="fas fa-box-open" style="font-size: 2rem; color: var(--gold);"></i><h3 style="margin: 15px 0 8px;">📦 El diplomado incluye</h3><ul style="list-style: none;"><li><i class="fas fa-check-circle gold-text"></i> Manual técnico descargable (400+ páginas)</li><li><i class="fas fa-check-circle gold-text"></i> Formatos de laboratorio · Tablas analíticas</li><li><i class="fas fa-check-circle gold-text"></i> Certificado digital avalado</li><li><i class="fas fa-check-circle gold-text"></i> Grabación de clases · Acceso permanente</li></ul></div>
-        <div style="flex:1"><i class="fas fa-chalkboard-user" style="font-size: 2rem; color: var(--gold);"></i><h3 style="margin: 15px 0 8px;">🎓 Trayectoria</h3><p>Más de 500 profesionales capacitados en bodegas, cervecerías y laboratorios de Latinoamérica. José Guerrero ha impartido formación técnica de alto nivel durante 6 años.</p></div>
+        <div style="flex:1"><i class="fas fa-video" style="font-size: 2rem; color: var(--gold);"></i><h3 style="margin: 15px 0 8px;">📹 Acceso a videos grabados</h3><ul style="list-style: none;"><li><i class="fas fa-check-circle gold-text"></i> Si no puedes asistir en vivo, revisa las grabaciones</li><li><i class="fas fa-check-circle gold-text"></i> Acceso de por vida a todo el material</li><li><i class="fas fa-check-circle gold-text"></i> Certificado digital avalado</li><li><i class="fas fa-check-circle gold-text"></i> Formación a tu ritmo</li></ul></div>
+        <div style="flex:1"><i class="fas fa-chalkboard-user" style="font-size: 2rem; color: var(--gold);"></i><h3 style="margin: 15px 0 8px;">🎓 Trayectoria</h3><p>Más de 500 profesionales capacitados en bodegas, cervecerías y laboratorios de Latinoamérica. José Guerrero ha impartido formación técnica de alto nivel durante 6 años.</p><p style="margin-top: 12px;"><i class="fas fa-calendar-alt gold-text"></i> <strong>Próxima generación: 1 de abril 2026</strong></p></div>
       </div>
     </div>
   </div>
@@ -567,39 +610,23 @@
   <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
     <div class="stat-card"><div class="stat-number">12</div><div>semanas de inmersión</div></div>
     <div class="stat-card"><div class="stat-number">+500</div><div>alumnos capacitados</div></div>
-    <div class="stat-card"><div class="stat-number">40+</div><div>horas en vivo</div></div>
-    <div class="stat-card"><div class="stat-number">100%</div><div>material descargable</div></div>
+    <div class="stat-card"><div class="stat-number">24+</div><div>horas en vivo</div></div>
+    <div class="stat-card"><div class="stat-number">100%</div><div>acceso a videos</div></div>
   </div>
 </div>
 
-<!-- SECCIÓN PAYPAL - CON ENLACE FUNCIONAL -->
+<!-- SECCIÓN PAYPAL - ENLACE CORRECTO -->
 <div id="pago-paypal" class="payment-section">
   <div class="container">
     <span class="section-subtitle">Asegura tu lugar</span>
     <h2 class="section-title" style="margin-bottom: 16px;">Inscripción al Diplomado</h2>
-    <p style="max-width: 550px; margin: 0 auto 20px;">Completa tu registro a través de PayPal. Cupos limitados, reserva ahora.</p>
+    <p style="max-width: 550px; margin: 0 auto 20px;">Completa tu registro a través de PayPal. Cupos limitados, reserva ahora con el precio promocional de <strong>$3,000 MXN</strong>.</p>
     <div class="paypal-button-container">
-      <!-- 
-        ⚠️ INSTRUCCIÓN IMPORTANTE PARA QUE FUNCIONE EL ENLACE DE PAYPAL:
-        
-        Para que el botón de PayPal funcione correctamente, debes:
-        
-        1. Ir a https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=
-        2. Iniciar sesión en tu cuenta de PayPal
-        3. Crear un botón de pago para "Diplomado en Ciencia y Tecnología del Vino" con precio $7,500 MXN
-        4. Copiar el ID del botón (aparece en el código generado)
-        5. Reemplazar "TU_BOTON_ID_AQUI" en el enlace de abajo con tu ID real
-        
-        Ejemplo de enlace real: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ABCD1234EFGH5
-        
-        Mientras tanto, el botón redirige a la página oficial de PayPal para crear tu botón.
-      -->
-      <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TU_BOTON_ID_AQUI" 
+      <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" 
          target="_blank" 
          rel="noopener noreferrer" 
-         class="paypal-button"
-         onclick="if(this.href.includes('TU_BOTON_ID_AQUI')) { alert('⚠️ Para activar PayPal: 1) Crea un botón en tu cuenta de PayPal 2) Copia el ID del botón 3) Reemplaza TU_BOTON_ID_AQUI en el enlace. ¿Necesitas ayuda? Contáctame por WhatsApp.'); return false; }">
-        <i class="fab fa-paypal"></i> Pagar con PayPal · $7,500 MXN
+         class="paypal-button">
+        <i class="fab fa-paypal"></i> Pagar con PayPal · $3,000 MXN
       </a>
     </div>
     <div class="paypal-note">
@@ -608,18 +635,13 @@
     <div style="margin-top: 20px; font-size: 0.85rem;">
       <i class="fas fa-credit-card gold-text"></i> También aceptamos transferencia bancaria. Escríbenos por WhatsApp para más formas de pago.
     </div>
+    <div style="margin-top: 15px; font-size: 0.8rem; color: var(--discount-red); font-weight: 500;">
+      ⚡ Promoción especial: $3,000 MXN (precio regular $8,500) · Inicio 1 de abril 2026
+    </div>
   </div>
 </div>
 
 <!-- Footer -->
 <footer>
   <div class="container">
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 45px;">
-      <div><h3 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem;"><i class="fas fa-wine-bottle gold-text"></i> Academia del Vino</h3><p>José Guerrero · Químico, Consultor Vinícola & Cervecero</p><p style="font-size: 0.8rem;">6 años formando profesionales en la industria vitivinícola</p></div>
-      <div style="display: flex; gap: 30px;">
-        <a href="https://wa.me/5214921344124" style="color: #E8DFD3; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="mailto:jmggarfias@gmail.com" style="color: #E8DFD3; text-decoration: none;"><i class="far fa-envelope"></i> Email</a>
-      </div>
-    </div>
-    <hr style="margin: 40px 0 25px; border-color: rgba(200,168,107,0.2);">
-    <div style="font-size: 0.75rem; text-align: center;">© 2026 Academia del Vino – Ciencia,
+    <div style="display: flex; flex-wrap: wrap; justify-content
