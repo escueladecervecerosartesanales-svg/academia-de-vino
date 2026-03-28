@@ -41,12 +41,12 @@
 
     .gold-text { color: var(--gold); }
     
-    /* Hero Banner - Imagen de viñedo */
+    /* Hero Banner - Imagen de uvas tintas en viñedo */
     .hero-banner {
       position: relative;
       width: 100%;
       min-height: 620px;
-      background-image: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.4) 100%), url('https://images.pexels.com/photos/618360/pexels-photo-618360.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-image: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.4) 100%), url('https://images.pexels.com/photos/1029156/pexels-photo-1029156.jpeg?auto=compress&cs=tinysrgb&w=1600');
       background-size: cover;
       background-position: center 45%;
       display: flex;
@@ -492,7 +492,7 @@
 </head>
 <body>
 
-<!-- HERO BANNER - Imagen de viñedo -->
+<!-- HERO BANNER - Imagen de uvas tintas en viñedo -->
 <div class="hero-banner">
   <div class="hero-banner-content">
     <span class="hero-badge-gold"><i class="fas fa-wine-bottle"></i>  ACADEMIA DEL VINO · DESDE 2019</span>
@@ -791,24 +791,36 @@
   </div>
 </div>
 
-<!-- SECCIÓN PAYPAL -->
+<!-- SECCIÓN PAYPAL - CON OPCIÓN DIFERIDA -->
 <div id="pago-paypal" class="payment-section">
   <div class="container">
     <span class="section-subtitle">Asegura tu lugar</span>
     <h2 class="section-title" style="margin-bottom: 16px;">Pago con PayPal</h2>
-    <p style="max-width: 550px; margin: 0 auto 20px;">Completa tu registro a través de PayPal. Cupos limitados, reserva ahora con el precio promocional de <strong>$3,000 MXN</strong> (contado).</p>
-    <div class="paypal-button-container">
-      <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="paypal-button">
-        <i class="fab fa-paypal"></i> Pagar con PayPal · $3,000 MXN
-      </a>
+    <p style="max-width: 550px; margin: 0 auto 20px;">Completa tu registro a través de PayPal. Elige la opción que mejor se adapte a ti.</p>
+    
+    <!-- Opciones de pago PayPal -->
+    <div class="payment-options" style="margin-bottom: 30px;">
+      <div class="payment-option-card" style="background: white;">
+        <i class="fas fa-credit-card"></i>
+        <h3 style="margin: 10px 0;">Pago de Contado</h3>
+        <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold-dark);">$3,000 MXN</p>
+        <p>Pago único · Acceso inmediato</p>
+        <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 15px; background: var(--gold); color: white; padding: 8px 24px; border-radius: 40px; text-decoration: none; font-weight: 500;">Pagar ahora</a>
+      </div>
+      <div class="payment-option-card" style="background: white;">
+        <i class="fas fa-calendar-alt"></i>
+        <h3 style="margin: 10px 0;">Pago Diferido</h3>
+        <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold-dark);">3 pagos de $1,000 MXN</p>
+        <p>Mensualidades fijas · Sin intereses</p>
+        <p style="font-size: 0.8rem;">*El primer pago al inscribirte</p>
+        <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 15px; background: var(--gold); color: white; padding: 8px 24px; border-radius: 40px; text-decoration: none; font-weight: 500;">Suscribirme</a>
+      </div>
     </div>
+    
     <div class="paypal-note">
       <i class="fas fa-lock gold-text"></i> Pago 100% seguro · Recibirás confirmación y acceso al aula virtual
     </div>
-    <p style="margin-top: 15px; font-size: 0.85rem;"><i class="fas fa-calendar-alt gold-text"></i> Si prefieres pagos diferidos (3 pagos de $1,000), selecciona la opción de transferencia bancaria.</p>
+    <p style="margin-top: 15px; font-size: 0.85rem;"><i class="fas fa-info-circle gold-text"></i> Para pagos diferidos, selecciona la suscripción mensual. El primer cobro será de $1,000 MXN y los siguientes dos meses se cobrarán automáticamente.</p>
   </div>
 </div>
 
