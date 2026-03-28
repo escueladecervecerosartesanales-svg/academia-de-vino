@@ -41,14 +41,14 @@
 
     .gold-text { color: var(--gold); }
     
-    /* Hero Banner */
+    /* Hero Banner - Imagen de viñedo/vino */
     .hero-banner {
       position: relative;
       width: 100%;
       min-height: 620px;
-      background-image: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.45) 100%), url('https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-image: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.4) 100%), url('https://images.pexels.com/photos/618360/pexels-photo-618360.jpeg?auto=compress&cs=tinysrgb&w=1600');
       background-size: cover;
-      background-position: center 40%;
+      background-position: center 45%;
       display: flex;
       align-items: center;
     }
@@ -270,27 +270,27 @@
     .accordion-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease-out;
+      transition: max-height 0.5s ease-out;
       background: #FEFCF9;
       border-top: 1px solid rgba(200, 168, 107, 0.1);
     }
     .accordion-content-inner { padding: 28px 32px; }
-    .accordion-item.active .accordion-content { max-height: 800px; }
+    .accordion-item.active .accordion-content { max-height: 2000px; }
     .accordion-item.active .accordion-header i { transform: rotate(180deg); }
     .topic-list-module {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 12px;
       list-style: none;
     }
     .topic-list-module li {
-      padding: 6px 0 6px 28px;
+      padding: 8px 0 8px 28px;
       position: relative;
     }
     .topic-list-module li i {
       position: absolute;
       left: 0;
-      top: 9px;
+      top: 11px;
       color: var(--gold);
     }
     .week-badge {
@@ -299,8 +299,16 @@
       padding: 4px 14px;
       font-size: 0.7rem;
       display: inline-block;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       color: var(--gold-dark);
+    }
+    .week-title {
+      font-weight: 700;
+      font-size: 1rem;
+      margin: 16px 0 8px 0;
+      color: var(--dark-charcoal);
+      border-left: 3px solid var(--gold);
+      padding-left: 12px;
     }
 
     /* Price Box con promoción */
@@ -360,10 +368,46 @@
       transform: translateY(-4px);
       box-shadow: 0 15px 30px rgba(0,0,0,0.15);
     }
-    .paypal-note {
-      margin-top: 20px;
-      font-size: 0.85rem;
-      color: var(--text-medium);
+
+    /* Transfer Section */
+    .transfer-section {
+      background: white;
+      padding: 70px 0;
+    }
+    .bank-card {
+      background: var(--soft-gray);
+      border-radius: 32px;
+      padding: 40px;
+      border: 1px solid rgba(200, 168, 107, 0.3);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .bank-detail {
+      background: white;
+      border-radius: 20px;
+      padding: 20px 28px;
+      margin: 20px 0;
+      border: 1px solid rgba(200, 168, 107, 0.2);
+    }
+    .bank-detail p {
+      margin: 8px 0;
+      font-family: monospace;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+    .copy-btn {
+      background: var(--gold);
+      border: none;
+      padding: 6px 16px;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      cursor: pointer;
+      margin-left: 12px;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover {
+      background: var(--gold-dark);
+      color: white;
     }
 
     .stat-card {
@@ -394,6 +438,7 @@
       .section-title { font-size: 2.2rem; }
       .price-card-hero { flex-direction: column; align-items: flex-start; }
       .accordion-header { padding: 18px 20px; font-size: 1rem; }
+      .topic-list-module { grid-template-columns: 1fr; }
     }
     .flex-between { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 30px; }
     .grid-2col { display: flex; flex-wrap: wrap; gap: 40px; }
@@ -410,7 +455,7 @@
 </head>
 <body>
 
-<!-- HERO BANNER -->
+<!-- HERO BANNER - Imagen de viñedo -->
 <div class="hero-banner">
   <div class="hero-banner-content">
     <span class="hero-badge-gold"><i class="fas fa-wine-bottle"></i>  ACADEMIA DEL VINO · DESDE 2026</span>
@@ -438,7 +483,7 @@
         <div class="author-card">
           <div class="author-icon"><i class="fas fa-flask"></i></div>
           <div>
-            <p style="font-weight: 700; font-size: 1.4rem; color: var(--dark-charcoal);">José Guerrero</p>
+            <p style="font-weight: 700; font-size: 1.4rem; color: var(--dark-charcoal);">José Guerrero Garfias</p>
             <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem; color: var(--text-medium);">
               <span><i class="fas fa-atom gold-text"></i> Químico de profesión</span>
               <span><i class="fas fa-champagne-glasses gold-text"></i> Consultor vinícola & cervecero</span>
@@ -483,7 +528,7 @@
   </div>
 </div>
 
-<!-- DIPLOMADO INFO + PRECIO con fecha de inicio -->
+<!-- DIPLOMADO INFO + PRECIO -->
 <div class="section">
   <div class="container">
     <div class="section-subtitle">Programa de Especialización</div>
@@ -508,14 +553,14 @@
   </div>
 </div>
 
-<!-- TEMARIO DESPLEGABLE (ACCORDION) -->
+<!-- TEMARIO DESPLEGABLE CON TODOS LOS TEMAS DETALLADOS -->
 <div class="section-light">
   <div class="container">
     <div style="text-align: center; margin-bottom: 45px;">
       <span class="section-subtitle">Plan de estudios completo</span>
       <h2 class="section-title">Temario detallado · 4 Módulos</h2>
       <div class="divider-gold" style="margin: 18px auto 0;"></div>
-      <p style="max-width: 650px; margin: 20px auto 0;">Haz clic en cada módulo para desplegar el contenido y explorar todas las semanas y temas.</p>
+      <p style="max-width: 650px; margin: 20px auto 0;">Haz clic en cada módulo para desplegar el contenido completo de todas las semanas.</p>
     </div>
 
     <div class="accordion">
@@ -527,13 +572,31 @@
         </div>
         <div class="accordion-content">
           <div class="accordion-content-inner">
-            <span class="week-badge"><i class="far fa-calendar-alt"></i> Semanas 1 a 3</span>
+            <div class="week-title">🔬 Semana 1 – Introducción a la Ciencia del Vino</div>
             <ul class="topic-list-module">
-              <li><i class="fas fa-wine-bottle"></i> Semana 1 – Historia técnica del vino, composición química de la uva, fisiología de la maduración</li>
-              <li><i class="fas fa-leaf"></i> Variedades de Vitis vinifera, parámetros de calidad de vendimia</li>
-              <li><i class="fas fa-chart-line"></i> Semana 2 – Azúcares (glucosa/fructosa), ácidos orgánicos, pH, acidez total, nitrógeno asimilable (YAN)</li>
-              <li><i class="fas fa-microscope"></i> Compuestos fenólicos, práctica: cálculo de alcohol probable, interpretación de análisis de mosto</li>
-              <li><i class="fas fa-bacteria"></i> Semana 3 – Microbiología del vino: levaduras vínicas, bacterias lácticas, control microbiológico</li>
+              <li><i class="fas fa-wine-bottle"></i> Historia técnica del vino</li>
+              <li><i class="fas fa-flask"></i> Composición química de la uva</li>
+              <li><i class="fas fa-leaf"></i> Fisiología de la maduración</li>
+              <li><i class="fas fa-tree"></i> Principales variedades de Vitis vinifera</li>
+              <li><i class="fas fa-chart-line"></i> Parámetros de calidad de vendimia</li>
+            </ul>
+            <div class="week-title">🍇 Semana 2 – Química del Mosto</div>
+            <ul class="topic-list-module">
+              <li><i class="fas fa-cube"></i> Azúcares (glucosa/fructosa)</li>
+              <li><i class="fas fa-vial"></i> Ácidos orgánicos (tartárico, málico, cítrico)</li>
+              <li><i class="fas fa-chart-simple"></i> pH y acidez total</li>
+              <li><i class="fas fa-atom"></i> Nitrógeno asimilable (YAN)</li>
+              <li><i class="fas fa-leaf"></i> Compuestos fenólicos</li>
+              <li><i class="fas fa-calculator"></i> Práctica demostrativa: Cálculo de alcohol probable, Interpretación de análisis de mosto</li>
+            </ul>
+            <div class="week-title">🦠 Semana 3 – Microbiología del Vino</div>
+            <ul class="topic-list-module">
+              <li><i class="fas fa-bacteria"></i> Levaduras vínicas: Saccharomyces cerevisiae</li>
+              <li><i class="fas fa-biohazard"></i> Levaduras no-Saccharomyces</li>
+              <li><i class="fas fa-dna"></i> Bacterias lácticas: Oenococcus oeni</li>
+              <li><i class="fas fa-bug"></i> Bacterias acéticas: Acetobacter aceti</li>
+              <li><i class="fas fa-skull"></i> Microorganismos contaminantes</li>
+              <li><i class="fas fa-microscope"></i> Control microbiológico</li>
             </ul>
           </div>
         </div>
@@ -547,12 +610,36 @@
         </div>
         <div class="accordion-content">
           <div class="accordion-content-inner">
-            <span class="week-badge"><i class="far fa-calendar-alt"></i> Semanas 4 a 7</span>
+            <div class="week-title">⚙️ Semana 4 – Proceso de Elaboración: Vinos Tintos</div>
             <ul class="topic-list-module">
-              <li><i class="fas fa-tint"></i> Semana 4 – Vinos tintos: recepción, molienda, maceración, fermentación alcohólica, remontados</li>
-              <li><i class="fas fa-snowflake"></i> Semana 5 – Vinos blancos y rosados: prensado directo, desfangado, fermentación controlada</li>
-              <li><i class="fas fa-chart-simple"></i> Semana 6 – Fermentaciones: cinética, factores que afectan, fermentación maloláctica</li>
-              <li><i class="fas fa-wood"></i> Semana 7 – Crianza en acero vs barrica, estabilización tartárica, filtración, uso de SO₂</li>
+              <li><i class="fas fa-truck"></i> Recepción y molienda</li>
+              <li><i class="fas fa-fill-drip"></i> Maceración y fermentación alcohólica</li>
+              <li><i class="fas fa-thermometer-half"></i> Control de temperatura</li>
+              <li><i class="fas fa-arrows-spin"></i> Remontados y bazuqueos</li>
+              <li><i class="fas fa-press"></i> Descube y prensado</li>
+            </ul>
+            <div class="week-title">❄️ Semana 5 – Proceso: Vinos Blancos y Rosados</div>
+            <ul class="topic-list-module">
+              <li><i class="fas fa-press"></i> Prensado directo</li>
+              <li><i class="fas fa-water"></i> Desfangado</li>
+              <li><i class="fas fa-temperature-low"></i> Fermentación controlada</li>
+              <li><i class="fas fa-chart-line"></i> Diferencias tecnológicas con tintos</li>
+            </ul>
+            <div class="week-title">🧪 Semana 6 – Fermentaciones</div>
+            <ul class="topic-list-module">
+              <li><i class="fas fa-chart-line"></i> Fermentación alcohólica (cinética)</li>
+              <li><i class="fas fa-list"></i> Factores que afectan la fermentación</li>
+              <li><i class="fas fa-exchange-alt"></i> Fermentación maloláctica</li>
+              <li><i class="fas fa-exclamation-triangle"></i> Problemas fermentativos y soluciones</li>
+            </ul>
+            <div class="week-title">🪵 Semana 7 – Crianza, Estabilización y Embotellado</div>
+            <ul class="topic-list-module">
+              <li><i class="fas fa-industry"></i> Crianza en acero vs barrica</li>
+              <li><i class="fas fa-tree"></i> Tipos de madera</li>
+              <li><i class="fas fa-snowplow"></i> Estabilización tartárica y proteica</li>
+              <li><i class="fas fa-filter"></i> Filtración</li>
+              <li><i class="fas fa-flask"></i> Uso de SO₂</li>
+              <li><i class="fas fa-hourglass-half"></i> Vida útil del vino</li>
             </ul>
           </div>
         </div>
@@ -566,11 +653,30 @@
         </div>
         <div class="accordion-content">
           <div class="accordion-content-inner">
-            <span class="week-badge"><i class="far fa-calendar-alt"></i> Semanas 8 a 10</span>
+            <div class="week-title">🧫 Semana 8 – Laboratorio de Microbiología Enológica</div>
             <ul class="topic-list-module">
-              <li><i class="fas fa-dna"></i> Semana 8 – Microbiología enológica: medios de cultivo, conteo en placa, control de fermentaciones</li>
-              <li><i class="fas fa-chart-pie"></i> Semana 9 – Análisis químico: pH, acidez total y volátil, alcohol, SO₂ libre y total</li>
-              <li><i class="fas fa-file-alt"></i> Semana 10 – Control de calidad: parámetros de exportación, defectos, estabilidad microbiológica</li>
+              <li><i class="fas fa-dish"></i> Medios de cultivo</li>
+              <li><i class="fas fa-chart-bar"></i> Conteo en placa</li>
+              <li><i class="fas fa-chart-line"></i> Control de fermentaciones</li>
+              <li><i class="fas fa-biohazard"></i> Identificación de contaminaciones</li>
+              <li><i class="fas fa-clipboard-list"></i> Buenas prácticas de laboratorio</li>
+            </ul>
+            <div class="week-title">⚗️ Semana 9 – Laboratorio de Análisis Químico</div>
+            <ul class="topic-list-module">
+              <li><i class="fas fa-vial"></i> Determinación de pH</li>
+              <li><i class="fas fa-chart-line"></i> Acidez total y volátil</li>
+              <li><i class="fas fa-percent"></i> Alcohol (% v/v)</li>
+              <li><i class="fas fa-cube"></i> Azúcares reductores</li>
+              <li><i class="fas fa-wind"></i> SO₂ libre y total</li>
+              <li><i class="fas fa-chart-simple"></i> Interpretación de resultados</li>
+            </ul>
+            <div class="week-title">📊 Semana 10 – Control de Calidad y Normatividad</div>
+            <ul class="topic-list-module">
+              <li><i class="fas fa-globe"></i> Parámetros de exportación</li>
+              <li><i class="fas fa-ban"></i> Defectos del vino</li>
+              <li><i class="fas fa-shield-alt"></i> Estabilidad microbiológica</li>
+              <li><i class="fas fa-qrcode"></i> Trazabilidad</li>
+              <li><i class="fas fa-building"></i> Gestión de calidad en bodega</li>
             </ul>
           </div>
         </div>
@@ -584,11 +690,21 @@
         </div>
         <div class="accordion-content">
           <div class="accordion-content-inner">
-            <span class="week-badge"><i class="far fa-calendar-alt"></i> Semanas 11 a 12</span>
+            <div class="week-title">🧠 Semana 11 – Defectos y Alteraciones del Vino</div>
             <ul class="topic-list-module">
-              <li><i class="fas fa-bug"></i> Semana 11 – Defectos y alteraciones: Brettanomyces, picado acético, reducción, oxidación</li>
-              <li><i class="fas fa-project-diagram"></i> Semana 12 – Proyecto final: diseño de proceso de vinificación, plan de control microbiológico</li>
-              <li><i class="fas fa-presentation"></i> Presentación online del proyecto con retroalimentación personalizada</li>
+              <li><i class="fas fa-bug"></i> Brettanomyces</li>
+              <li><i class="fas fa-vinegar"></i> Picado acético</li>
+              <li><i class="fas fa-champagne-glasses"></i> Refermentación en botella</li>
+              <li><i class="fas fa-tint"></i> Reducción y oxidación</li>
+              <li><i class="fas fa-folder-open"></i> Casos reales y resolución técnica</li>
+            </ul>
+            <div class="week-title">🎓 Semana 12 – Proyecto Final Integrador</div>
+            <ul class="topic-list-module">
+              <li><i class="fas fa-draw-polygon"></i> Diseño de proceso de vinificación (tinto o blanco)</li>
+              <li><i class="fas fa-chart-line"></i> Plan de control microbiológico</li>
+              <li><i class="fas fa-vial"></i> Programa de análisis de laboratorio</li>
+              <li><i class="fas fa-box"></i> Protocolo de estabilización y embotellado</li>
+              <li><i class="fas fa-presentation"></i> Presentación online del proyecto</li>
             </ul>
           </div>
         </div>
@@ -615,11 +731,11 @@
   </div>
 </div>
 
-<!-- SECCIÓN PAYPAL - ENLACE CORRECTO -->
+<!-- SECCIÓN PAYPAL -->
 <div id="pago-paypal" class="payment-section">
   <div class="container">
     <span class="section-subtitle">Asegura tu lugar</span>
-    <h2 class="section-title" style="margin-bottom: 16px;">Inscripción al Diplomado</h2>
+    <h2 class="section-title" style="margin-bottom: 16px;">Pago con PayPal</h2>
     <p style="max-width: 550px; margin: 0 auto 20px;">Completa tu registro a través de PayPal. Cupos limitados, reserva ahora con el precio promocional de <strong>$3,000 MXN</strong>.</p>
     <div class="paypal-button-container">
       <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" 
@@ -632,11 +748,40 @@
     <div class="paypal-note">
       <i class="fas fa-lock gold-text"></i> Pago 100% seguro · Recibirás confirmación y acceso al aula virtual
     </div>
-    <div style="margin-top: 20px; font-size: 0.85rem;">
-      <i class="fas fa-credit-card gold-text"></i> También aceptamos transferencia bancaria. Escríbenos por WhatsApp para más formas de pago.
+  </div>
+</div>
+
+<!-- SECCIÓN TRANSFERENCIA / DEPÓSITO BANCARIO -->
+<div class="transfer-section">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <span class="section-subtitle">Formas de pago</span>
+      <h2 class="section-title">Transferencia o Depósito Bancario</h2>
+      <div class="divider-gold" style="margin: 20px auto 0;"></div>
+      <p style="max-width: 600px; margin: 20px auto 0;">Realiza tu pago y envía tu comprobante por WhatsApp para confirmar tu inscripción.</p>
     </div>
-    <div style="margin-top: 15px; font-size: 0.8rem; color: var(--discount-red); font-weight: 500;">
-      ⚡ Promoción especial: $3,000 MXN (precio regular $8,500) · Inicio 1 de abril 2026
+    <div class="bank-card">
+      <div style="text-align: center; margin-bottom: 25px;">
+        <i class="fas fa-university" style="font-size: 2.5rem; color: var(--gold);"></i>
+        <h3 style="margin-top: 10px;">Datos para transferencia</h3>
+      </div>
+      <div class="bank-detail">
+        <p><strong><i class="fas fa-credit-card"></i> Pago con tarjeta (depósito):</strong></p>
+        <p style="font-size: 1.2rem; font-weight: 700; color: var(--gold-dark);">4152 3145 9813 3463</p>
+        <button class="copy-btn" onclick="copyToClipboard('4152314598133463')">Copiar número</button>
+      </div>
+      <div class="bank-detail">
+        <p><strong><i class="fas fa-exchange-alt"></i> Pago con CLABE (transferencia):</strong></p>
+        <p style="font-size: 1.1rem; font-weight: 500;">012 074 01558665643 7</p>
+        <p><strong>Banco:</strong> BBVA México</p>
+        <p><strong>Beneficiario:</strong> José Guerrero Garfias</p>
+        <button class="copy-btn" onclick="copyToClipboard('012074015586656437')">Copiar CLABE</button>
+      </div>
+      <div style="background: rgba(200,168,107,0.1); border-radius: 20px; padding: 20px; margin-top: 20px; text-align: center;">
+        <i class="fas fa-info-circle gold-text"></i>
+        <p style="margin-top: 8px;"><strong>Importe a pagar:</strong> $3,000 MXN (promoción especial)</p>
+        <p style="font-size: 0.85rem;">Una vez realizado el depósito, envía tu comprobante por WhatsApp al <strong>+52 492 134 4124</strong> con tu nombre completo y correo.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -644,4 +789,48 @@
 <!-- Footer -->
 <footer>
   <div class="container">
-    <div style="display: flex; flex-wrap: wrap; justify-content
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 45px;">
+      <div><h3 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem;"><i class="fas fa-wine-bottle gold-text"></i> Academia del Vino</h3><p>José Guerrero Garfias · Químico, Consultor Vinícola & Cervecero</p><p style="font-size: 0.8rem;">6 años formando profesionales en la industria vitivinícola</p></div>
+      <div style="display: flex; gap: 30px;">
+        <a href="https://wa.me/5214921344124" style="color: #E8DFD3; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="mailto:jmggarfias@gmail.com" style="color: #E8DFD3; text-decoration: none;"><i class="far fa-envelope"></i> Email</a>
+      </div>
+    </div>
+    <hr style="margin: 40px 0 25px; border-color: rgba(200,168,107,0.2);">
+    <div style="font-size: 0.75rem; text-align: center;">© 2026 Academia del Vino – Ciencia, tradición y excelencia enológica. Inicio: 1 de abril 2026</div>
+  </div>
+</footer>
+
+<script>
+  // Accordion functionality
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', function() {
+      const item = this.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+
+  // Copy to clipboard function
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Número copiado al portapapeles: ' + text);
+    }).catch(() => {
+      alert('No se pudo copiar automáticamente. Por favor, copia manualmente.');
+    });
+  }
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === "#" || targetId === "") return;
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
