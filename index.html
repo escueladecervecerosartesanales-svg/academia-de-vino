@@ -41,7 +41,7 @@
 
     .gold-text { color: var(--gold); }
     
-    /* Hero Banner - Imagen de viñedo/vino */
+    /* Hero Banner - Imagen de viñedo */
     .hero-banner {
       position: relative;
       width: 100%;
@@ -342,6 +342,34 @@
       margin-top: 8px;
     }
 
+    /* Opciones de pago */
+    .payment-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+      justify-content: center;
+    }
+    .payment-option-card {
+      background: white;
+      border-radius: 28px;
+      padding: 24px;
+      flex: 1;
+      min-width: 250px;
+      text-align: center;
+      border: 1px solid rgba(200, 168, 107, 0.3);
+      transition: all 0.3s;
+    }
+    .payment-option-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+    .payment-option-card i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
     /* PayPal Section */
     .payment-section {
       background: linear-gradient(135deg, #FEFAF5, #FDF9F2);
@@ -451,6 +479,15 @@
       display: inline-block;
       font-weight: 500;
     }
+    .zoom-info {
+      background: rgba(200, 168, 107, 0.1);
+      border-radius: 40px;
+      padding: 12px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 15px;
+    }
   </style>
 </head>
 <body>
@@ -458,7 +495,7 @@
 <!-- HERO BANNER - Imagen de viñedo -->
 <div class="hero-banner">
   <div class="hero-banner-content">
-    <span class="hero-badge-gold"><i class="fas fa-wine-bottle"></i>  ACADEMIA DEL VINO · DESDE 2026</span>
+    <span class="hero-badge-gold"><i class="fas fa-wine-bottle"></i>  ACADEMIA DEL VINO · DESDE 2019</span>
     <h1>Diplomado en Ciencia<br>y Tecnología del Vino</h1>
     <p class="subhead">Formación de élite con rigor químico, microbiológico y sensorial. Dirigido por José Guerrero, químico y consultor internacional con más de 6 años formando profesionales en bodegas y cervecerías.</p>
     <div class="price-card-hero">
@@ -518,7 +555,7 @@
       <div class="divider-gold" style="margin: 20px auto 0;"></div>
     </div>
     <div class="benefits-grid">
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Clases en vivo + Grabación</h3><p>Acceso a los videos grabados por si no puedes asistir en vivo. Repasa las sesiones cuando quieras.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Clases en vivo vía Zoom</h3><p>Clases todos los miércoles. Acceso a los videos grabados por si no puedes asistir. Repasa las sesiones cuando quieras.</p></div>
       <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-flask"></i></div><h3>Casos prácticos reales</h3><p>Análisis de situaciones reales en bodega, resolución de problemas fermentativos y control de calidad.</p></div>
       <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-certificate"></i></div><h3>Certificado con aval técnico</h3><p>Diploma digital firmado por José Guerrero, respaldando tu especialización en Ciencia del Vino.</p></div>
       <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-chart-line"></i></div><h3>Proyecto final integrador</h3><p>Diseña tu propio plan de vinificación y control de calidad con retroalimentación personalizada.</p></div>
@@ -528,7 +565,7 @@
   </div>
 </div>
 
-<!-- DIPLOMADO INFO + PRECIO -->
+<!-- DIPLOMADO INFO + PRECIO + OPCIONES DE PAGO -->
 <div class="section">
   <div class="container">
     <div class="section-subtitle">Programa de Especialización</div>
@@ -536,8 +573,14 @@
     <div class="divider-gold"></div>
     <div class="flex-between">
       <div>
-        <p><i class="fas fa-calendar-alt gold-text"></i> <strong>12 semanas</strong> · Modalidad online (clase semanal 2–3 h) · Acceso a videos grabados</p>
+        <p><i class="fas fa-calendar-alt gold-text"></i> <strong>12 semanas</strong> · Modalidad online vía Zoom</p>
+        <p><i class="fas fa-calendar-week gold-text"></i> <strong>Clases en vivo:</strong> Todos los miércoles (clase semanal 2–3 horas)</p>
+        <p><i class="fas fa-clock gold-text"></i> <strong>+50 horas lectivas y educativas</strong> (clases en vivo + material complementario)</p>
         <p style="margin-top: 12px;"><i class="fas fa-trophy gold-text"></i> Certificado digital avalado + respaldo técnico de José Guerrero</p>
+        <div class="zoom-info">
+          <i class="fab fa-zoom" style="color: var(--gold); font-size: 1.2rem;"></i>
+          <span><strong>Plataforma:</strong> Zoom · Clases en vivo con interacción directa</span>
+        </div>
         <div class="start-date" style="margin-top: 20px;">
           <i class="fas fa-calendar-check gold-text"></i> <strong>Inicio del curso: 1 de abril de 2026</strong>
         </div>
@@ -548,6 +591,23 @@
         <div class="promo-badge">🔥 Oferta especial de lanzamiento</div>
         <div style="font-size: 0.75rem; margin-top: 12px;">*Pago único · Incluye certificado y acceso a videos grabados</div>
         <a href="#pago-paypal" style="display: inline-block; margin-top: 16px; background: var(--gold); color: white; padding: 10px 32px; border-radius: 50px; text-decoration: none; font-weight: 600;">Aprovechar oferta</a>
+      </div>
+    </div>
+
+    <!-- Opciones de pago diferido -->
+    <div class="payment-options">
+      <div class="payment-option-card">
+        <i class="fas fa-credit-card"></i>
+        <h3 style="margin: 10px 0;">Pago de Contado</h3>
+        <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold-dark);">$3,000 MXN</p>
+        <p>Pago único · Acceso inmediato</p>
+      </div>
+      <div class="payment-option-card">
+        <i class="fas fa-calendar-alt"></i>
+        <h3 style="margin: 10px 0;">Pago Diferido</h3>
+        <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold-dark);">3 pagos de $1,000 MXN</p>
+        <p>Mensualidades fijas · Sin intereses</p>
+        <p style="font-size: 0.8rem; margin-top: 8px;">*El primer pago al inscribirte</p>
       </div>
     </div>
   </div>
@@ -715,7 +775,7 @@
     <div style="background: white; border-radius: 32px; padding: 40px; margin-top: 50px; border: 1px solid rgba(200,168,107,0.25);">
       <div style="display: flex; flex-wrap: wrap; gap: 40px;">
         <div style="flex:1"><i class="fas fa-video" style="font-size: 2rem; color: var(--gold);"></i><h3 style="margin: 15px 0 8px;">📹 Acceso a videos grabados</h3><ul style="list-style: none;"><li><i class="fas fa-check-circle gold-text"></i> Si no puedes asistir en vivo, revisa las grabaciones</li><li><i class="fas fa-check-circle gold-text"></i> Acceso de por vida a todo el material</li><li><i class="fas fa-check-circle gold-text"></i> Certificado digital avalado</li><li><i class="fas fa-check-circle gold-text"></i> Formación a tu ritmo</li></ul></div>
-        <div style="flex:1"><i class="fas fa-chalkboard-user" style="font-size: 2rem; color: var(--gold);"></i><h3 style="margin: 15px 0 8px;">🎓 Trayectoria</h3><p>Más de 500 profesionales capacitados en bodegas, cervecerías y laboratorios de Latinoamérica. José Guerrero ha impartido formación técnica de alto nivel durante 6 años.</p><p style="margin-top: 12px;"><i class="fas fa-calendar-alt gold-text"></i> <strong>Próxima generación: 1 de abril 2026</strong></p></div>
+        <div style="flex:1"><i class="fas fa-chalkboard-user" style="font-size: 2rem; color: var(--gold);"></i><h3 style="margin: 15px 0 8px;">🎓 Trayectoria</h3><p>Más de 500 profesionales capacitados en bodegas, cervecerías y laboratorios de Latinoamérica. José Guerrero ha impartido formación técnica de alto nivel desde 2019.</p><p style="margin-top: 12px;"><i class="fas fa-calendar-alt gold-text"></i> <strong>Próxima generación: 1 de abril 2026</strong></p><p><i class="fab fa-zoom gold-text"></i> <strong>Clases:</strong> Todos los miércoles vía Zoom</p></div>
       </div>
     </div>
   </div>
@@ -726,7 +786,7 @@
   <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
     <div class="stat-card"><div class="stat-number">12</div><div>semanas de inmersión</div></div>
     <div class="stat-card"><div class="stat-number">+500</div><div>alumnos capacitados</div></div>
-    <div class="stat-card"><div class="stat-number">24+</div><div>horas en vivo</div></div>
+    <div class="stat-card"><div class="stat-number">+50</div><div>horas lectivas</div></div>
     <div class="stat-card"><div class="stat-number">100%</div><div>acceso a videos</div></div>
   </div>
 </div>
@@ -736,7 +796,7 @@
   <div class="container">
     <span class="section-subtitle">Asegura tu lugar</span>
     <h2 class="section-title" style="margin-bottom: 16px;">Pago con PayPal</h2>
-    <p style="max-width: 550px; margin: 0 auto 20px;">Completa tu registro a través de PayPal. Cupos limitados, reserva ahora con el precio promocional de <strong>$3,000 MXN</strong>.</p>
+    <p style="max-width: 550px; margin: 0 auto 20px;">Completa tu registro a través de PayPal. Cupos limitados, reserva ahora con el precio promocional de <strong>$3,000 MXN</strong> (contado).</p>
     <div class="paypal-button-container">
       <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" 
          target="_blank" 
@@ -748,6 +808,7 @@
     <div class="paypal-note">
       <i class="fas fa-lock gold-text"></i> Pago 100% seguro · Recibirás confirmación y acceso al aula virtual
     </div>
+    <p style="margin-top: 15px; font-size: 0.85rem;"><i class="fas fa-calendar-alt gold-text"></i> Si prefieres pagos diferidos (3 pagos de $1,000), selecciona la opción de transferencia bancaria.</p>
   </div>
 </div>
 
@@ -779,8 +840,10 @@
       </div>
       <div style="background: rgba(200,168,107,0.1); border-radius: 20px; padding: 20px; margin-top: 20px; text-align: center;">
         <i class="fas fa-info-circle gold-text"></i>
-        <p style="margin-top: 8px;"><strong>Importe a pagar:</strong> $3,000 MXN (promoción especial)</p>
-        <p style="font-size: 0.85rem;">Una vez realizado el depósito, envía tu comprobante por WhatsApp al <strong>+52 492 134 4124</strong> con tu nombre completo y correo.</p>
+        <p style="margin-top: 8px;"><strong>Opciones de pago:</strong></p>
+        <p>✓ Pago de contado: <strong>$3,000 MXN</strong></p>
+        <p>✓ Pago diferido: <strong>3 pagos de $1,000 MXN</strong> (mensualidades)</p>
+        <p style="margin-top: 8px;">Una vez realizado el depósito, envía tu comprobante por WhatsApp al <strong>+52 492 134 4124</strong> con tu nombre completo y correo.</p>
       </div>
     </div>
   </div>
@@ -790,14 +853,14 @@
 <footer>
   <div class="container">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 45px;">
-      <div><h3 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem;"><i class="fas fa-wine-bottle gold-text"></i> Academia del Vino</h3><p>José Guerrero Garfias · Químico, Consultor Vinícola & Cervecero</p><p style="font-size: 0.8rem;">6 años formando profesionales en la industria vitivinícola</p></div>
+      <div><h3 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem;"><i class="fas fa-wine-bottle gold-text"></i> Academia del Vino</h3><p>José Guerrero Garfias · Químico, Consultor Vinícola & Cervecero</p><p style="font-size: 0.8rem;">Desde 2019 formando profesionales en la industria vitivinícola</p></div>
       <div style="display: flex; gap: 30px;">
         <a href="https://wa.me/5214921344124" style="color: #E8DFD3; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         <a href="mailto:jmggarfias@gmail.com" style="color: #E8DFD3; text-decoration: none;"><i class="far fa-envelope"></i> Email</a>
       </div>
     </div>
     <hr style="margin: 40px 0 25px; border-color: rgba(200,168,107,0.2);">
-    <div style="font-size: 0.75rem; text-align: center;">© 2026 Academia del Vino – Ciencia, tradición y excelencia enológica. Inicio: 1 de abril 2026</div>
+    <div style="font-size: 0.75rem; text-align: center;">© 2026 Academia del Vino – Ciencia, tradición y excelencia enológica. Clases todos los miércoles vía Zoom | Inicio: 1 de abril 2026</div>
   </div>
 </footer>
 
