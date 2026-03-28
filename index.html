@@ -171,9 +171,6 @@
       justify-content: center;
       gap: 10px;
     }
-    .urgent-text i {
-      font-size: 1.2rem;
-    }
     .countdown {
       display: flex;
       justify-content: center;
@@ -238,7 +235,7 @@
       margin: 24px 0 32px;
     }
 
-    /* Author & Contact */
+    /* Author & Contact - CON FOTO DE PERFIL */
     .author-card {
       background: white;
       padding: 28px 32px;
@@ -249,17 +246,13 @@
       align-items: center;
       gap: 24px;
     }
-    .author-icon {
-      background: var(--soft-gray);
+    .author-photo {
       width: 72px;
       height: 72px;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(200, 168, 107, 0.3);
+      object-fit: cover;
+      border: 2px solid var(--gold);
     }
-    .author-icon i { font-size: 2rem; color: var(--gold); }
     .contact-card {
       background: white;
       border-radius: 28px;
@@ -565,7 +558,7 @@
 </head>
 <body>
 
-<!-- HERO BANNER - Imagen de vino tinto con uvas -->
+<!-- HERO BANNER -->
 <div class="hero-banner">
   <div class="hero-banner-content">
     <span class="hero-badge-gold"><i class="fas fa-wine-bottle"></i>  ACADEMIA DEL VINO · DESDE 2019</span>
@@ -585,7 +578,7 @@
   </div>
 </div>
 
-<!-- SECCIÓN TEMPORIZADOR - CUENTA REGRESIVA URGENTE -->
+<!-- SECCIÓN TEMPORIZADOR -->
 <div class="timer-section">
   <div class="container">
     <div class="timer-container">
@@ -596,22 +589,10 @@
       </div>
       <div class="timer-label">La promoción de lanzamiento termina en:</div>
       <div id="countdown" class="countdown">
-        <div class="countdown-item">
-          <div id="days" class="countdown-number">00</div>
-          <div class="countdown-label">Días</div>
-        </div>
-        <div class="countdown-item">
-          <div id="hours" class="countdown-number">00</div>
-          <div class="countdown-label">Horas</div>
-        </div>
-        <div class="countdown-item">
-          <div id="minutes" class="countdown-number">00</div>
-          <div class="countdown-label">Minutos</div>
-        </div>
-        <div class="countdown-item">
-          <div id="seconds" class="countdown-number">00</div>
-          <div class="countdown-label">Segundos</div>
-        </div>
+        <div class="countdown-item"><div id="days" class="countdown-number">00</div><div class="countdown-label">Días</div></div>
+        <div class="countdown-item"><div id="hours" class="countdown-number">00</div><div class="countdown-label">Horas</div></div>
+        <div class="countdown-item"><div id="minutes" class="countdown-number">00</div><div class="countdown-label">Minutos</div></div>
+        <div class="countdown-item"><div id="seconds" class="countdown-number">00</div><div class="countdown-label">Segundos</div></div>
       </div>
       <div id="expired-message" style="display: none;" class="timer-expired">
         <i class="fas fa-clock"></i> La oferta ha terminado · Precio regular $8,500 MXN
@@ -623,13 +604,13 @@
   </div>
 </div>
 
-<!-- Perfil + Contacto -->
+<!-- Perfil + Contacto CON TU FOTO -->
 <div class="section" style="padding-top: 70px; padding-bottom: 40px;">
   <div class="container">
     <div class="grid-2col">
       <div style="flex: 1.5;">
         <div class="author-card">
-          <div class="author-icon"><i class="fas fa-flask"></i></div>
+          <img src="https://i.postimg.cc/Gt0rQP3C/Whats-App-Image-2026-03-28-at-11-58-58-AM.jpg" alt="José Guerrero" class="author-photo">
           <div>
             <p style="font-weight: 700; font-size: 1.4rem; color: var(--dark-charcoal);">José Guerrero Garfias</p>
             <div style="display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.9rem; color: var(--text-medium);">
@@ -666,17 +647,17 @@
       <div class="divider-gold" style="margin: 20px auto 0;"></div>
     </div>
     <div class="benefits-grid">
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Clases en vivo vía Zoom</h3><p>Clases todos los miércoles. Acceso a los videos grabados por si no puedes asistir. Repasa las sesiones cuando quieras.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-flask"></i></div><h3>Casos prácticos reales</h3><p>Análisis de situaciones reales en bodega, resolución de problemas fermentativos y control de calidad.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-certificate"></i></div><h3>Certificado con aval técnico</h3><p>Diploma digital firmado por José Guerrero, respaldando tu especialización en Ciencia del Vino.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-chart-line"></i></div><h3>Proyecto final integrador</h3><p>Diseña tu propio plan de vinificación y control de calidad con retroalimentación personalizada.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-users"></i></div><h3>Comunidad de egresados</h3><p>Acceso a grupo exclusivo, networking con profesionales del sector vitivinícola y cervecero.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-video"></i></div><h3>Acceso a videos grabados</h3><p>Si no puedes asistir a la clase en vivo, tendrás acceso a todas las grabaciones para estudiar a tu ritmo.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Clases en vivo vía Zoom</h3><p>Clases todos los miércoles. Acceso a los videos grabados por si no puedes asistir.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-flask"></i></div><h3>Casos prácticos reales</h3><p>Análisis de situaciones reales en bodega, resolución de problemas fermentativos.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-certificate"></i></div><h3>Certificado con aval técnico</h3><p>Diploma digital firmado por José Guerrero.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-chart-line"></i></div><h3>Proyecto final integrador</h3><p>Diseña tu propio plan de vinificación con retroalimentación personalizada.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-users"></i></div><h3>Comunidad de egresados</h3><p>Networking con profesionales del sector vitivinícola y cervecero.</p></div>
+      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-video"></i></div><h3>Acceso a videos grabados</h3><p>Todas las grabaciones disponibles para estudiar a tu ritmo.</p></div>
     </div>
   </div>
 </div>
 
-<!-- DIPLOMADO INFO + PRECIO + OPCIONES DE PAGO con mensaje urgente -->
+<!-- DIPLOMADO INFO + PRECIO -->
 <div class="section">
   <div class="container">
     <div class="section-subtitle">Programa de Especialización</div>
@@ -686,68 +667,42 @@
       <div>
         <p><i class="fas fa-calendar-alt gold-text"></i> <strong>12 semanas</strong> · Modalidad online vía Zoom</p>
         <p><i class="fas fa-calendar-week gold-text"></i> <strong>Clases en vivo:</strong> Todos los miércoles (clase semanal 2–3 horas)</p>
-        <p><i class="fas fa-clock gold-text"></i> <strong>+50 horas lectivas y educativas</strong> (clases en vivo + material complementario)</p>
-        <p style="margin-top: 12px;"><i class="fas fa-trophy gold-text"></i> Certificado digital avalado + respaldo técnico de José Guerrero</p>
-        <div class="zoom-info">
-          <i class="fab fa-zoom" style="color: var(--gold); font-size: 1.2rem;"></i>
-          <span><strong>Plataforma:</strong> Zoom · Clases en vivo con interacción directa</span>
-        </div>
-        <div class="start-date" style="margin-top: 20px;">
-          <i class="fas fa-calendar-check gold-text"></i> <strong>Inicio del curso: 1 de abril de 2026</strong>
-        </div>
+        <p><i class="fas fa-clock gold-text"></i> <strong>+50 horas lectivas y educativas</strong></p>
+        <div class="zoom-info"><i class="fab fa-zoom"></i><span>Zoom · Clases en vivo con interacción directa</span></div>
+        <div class="start-date" style="margin-top: 20px;"><i class="fas fa-calendar-check gold-text"></i> <strong>Inicio: 1 de abril de 2026</strong></div>
       </div>
       <div class="price-big">
-        <span style="font-size: 0.8rem; letter-spacing: 2px;">INVERSIÓN CON PROMOCIÓN</span>
+        <span style="font-size: 0.8rem;">INVERSIÓN CON PROMOCIÓN</span>
         <div><span class="price-original-big">$8,500 MXN</span> <span class="price-number">$3,000 MXN</span></div>
         <div class="promo-badge">🔥 Oferta especial de lanzamiento</div>
-        <div style="font-size: 0.75rem; margin-top: 12px;">*Pago único · Incluye certificado y acceso a videos grabados</div>
-        <div style="background: var(--urgent-orange); color: white; padding: 8px 12px; border-radius: 40px; font-size: 0.7rem; margin-top: 12px;">
-          ⏰ Válido hasta el 31 de marzo 2026
-        </div>
-        <a href="#pago-paypal" style="display: inline-block; margin-top: 16px; background: var(--gold); color: white; padding: 10px 32px; border-radius: 50px; text-decoration: none; font-weight: 600;">Aprovechar oferta</a>
+        <div style="background: var(--urgent-orange); color: white; padding: 8px; border-radius: 40px; font-size: 0.7rem; margin-top: 12px;">⏰ Válido hasta el 31 de marzo 2026</div>
+        <a href="#pago-paypal" style="display: inline-block; margin-top: 16px; background: var(--gold); color: white; padding: 10px 32px; border-radius: 50px; text-decoration: none;">Aprovechar oferta</a>
       </div>
     </div>
-
-    <!-- Opciones de pago diferido -->
     <div class="payment-options">
-      <div class="payment-option-card">
-        <i class="fas fa-credit-card"></i>
-        <h3 style="margin: 10px 0;">Pago de Contado</h3>
-        <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold-dark);">$3,000 MXN</p>
-        <p>Pago único · Acceso inmediato</p>
-        <p style="font-size: 0.7rem; color: var(--urgent-orange); margin-top: 5px;">⚡ Precio promocional</p>
-      </div>
-      <div class="payment-option-card">
-        <i class="fas fa-calendar-alt"></i>
-        <h3 style="margin: 10px 0;">Pago Diferido</h3>
-        <p style="font-size: 1.5rem; font-weight: 700; color: var(--gold-dark);">3 pagos de $1,000 MXN</p>
-        <p>Mensualidades fijas · Sin intereses</p>
-        <p style="font-size: 0.8rem; margin-top: 8px;">*El primer pago al inscribirte</p>
-      </div>
+      <div class="payment-option-card"><i class="fas fa-credit-card"></i><h3>Pago de Contado</h3><p style="font-size: 1.5rem; font-weight: 700; color: var(--gold-dark);">$3,000 MXN</p><p>Pago único</p></div>
+      <div class="payment-option-card"><i class="fas fa-calendar-alt"></i><h3>Pago Diferido</h3><p style="font-size: 1.5rem; font-weight: 700; color: var(--gold-dark);">3 pagos de $1,000 MXN</p><p>Mensualidades sin intereses</p></div>
     </div>
   </div>
 </div>
 
-<!-- TEMARIO DESPLEGABLE (abreviado para mantener el código funcional, mismo contenido que antes) -->
+<!-- TEMARIO DESPLEGABLE RESUMIDO -->
 <div class="section-light">
   <div class="container">
     <div style="text-align: center; margin-bottom: 45px;">
-      <span class="section-subtitle">Plan de estudios completo</span>
-      <h2 class="section-title">Temario detallado · 4 Módulos</h2>
-      <div class="divider-gold" style="margin: 18px auto 0;"></div>
-      <p style="max-width: 650px; margin: 20px auto 0;">Haz clic en cada módulo para desplegar el contenido completo de todas las semanas.</p>
+      <span class="section-subtitle">Plan de estudios</span>
+      <h2 class="section-title">Temario · 4 Módulos</h2>
     </div>
     <div class="accordion">
-      <!-- Módulo 1 (resumido para mantener funcionalidad, mismo contenido temático) -->
-      <div class="accordion-item"><div class="accordion-header"><span><i class="fas fa-grape"></i> MÓDULO I – Fundamentos Científicos de la Vitivinicultura</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><div class="week-title">🔬 Semana 1 – Introducción a la Ciencia del Vino</div><ul class="topic-list-module"><li>Historia técnica del vino · Composición química de la uva · Fisiología de la maduración · Variedades Vitis vinifera · Parámetros de calidad</li></ul><div class="week-title">🍇 Semana 2 – Química del Mosto</div><ul class="topic-list-module"><li>Azúcares · Ácidos orgánicos · pH y acidez total · Nitrógeno asimilable · Compuestos fenólicos · Cálculo de alcohol probable</li></ul><div class="week-title">🦠 Semana 3 – Microbiología del Vino</div><ul class="topic-list-module"><li>Levaduras vínicas · Bacterias lácticas · Bacterias acéticas · Control microbiológico</li></ul></div></div></div>
-      <div class="accordion-item"><div class="accordion-header"><span><i class="fas fa-wine-bottle"></i> MÓDULO II – Proceso de Elaboración del Vino</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><div class="week-title">⚙️ Semana 4–7</div><ul class="topic-list-module"><li>Vinos tintos: maceración, fermentación, remontados · Vinos blancos: prensado directo, desfangado · Fermentaciones: cinética, maloláctica · Crianza en acero vs barrica, estabilización, SO₂</li></ul></div></div></div>
-      <div class="accordion-item"><div class="accordion-header"><span><i class="fas fa-microscope"></i> MÓDULO III – Laboratorio de Calidad y Control</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><div class="week-title">🧫 Semana 8–10</div><ul class="topic-list-module"><li>Microbiología enológica: medios de cultivo, conteo en placa · Análisis químico: pH, acidez, alcohol, SO₂ · Control de calidad, normatividad</li></ul></div></div></div>
-      <div class="accordion-item"><div class="accordion-header"><span><i class="fas fa-brain"></i> MÓDULO IV – Innovación, Defectos y Proyecto Final</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><div class="week-title">🧠 Semana 11–12</div><ul class="topic-list-module"><li>Defectos: Brettanomyces, picado acético, reducción · Proyecto final: diseño de vinificación, plan de control, presentación</li></ul></div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><span>📅 MÓDULO I – Fundamentos Científicos</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><ul class="topic-list-module"><li>Historia técnica, composición química de la uva, fisiología de la maduración</li><li>Química del mosto: azúcares, ácidos, pH, YAN, compuestos fenólicos</li><li>Microbiología: levaduras, bacterias lácticas, control microbiológico</li></ul></div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><span>🍷 MÓDULO II – Proceso de Elaboración</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><ul class="topic-list-module"><li>Vinos tintos: maceración, fermentación, remontados</li><li>Vinos blancos y rosados: prensado directo, desfangado</li><li>Fermentaciones, crianza, estabilización, uso de SO₂</li></ul></div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><span>🔬 MÓDULO III – Laboratorio y Control</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><ul class="topic-list-module"><li>Microbiología enológica: medios de cultivo, conteo en placa</li><li>Análisis químico: pH, acidez, alcohol, SO₂</li><li>Control de calidad, normatividad, trazabilidad</li></ul></div></div></div>
+      <div class="accordion-item"><div class="accordion-header"><span>🧠 MÓDULO IV – Defectos y Proyecto Final</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><ul class="topic-list-module"><li>Defectos: Brettanomyces, picado acético, reducción</li><li>Proyecto final: diseño de vinificación, plan de control</li><li>Presentación online con retroalimentación</li></ul></div></div></div>
     </div>
   </div>
 </div>
 
-<!-- Stats y secciones de pago (PayPal y Transferencia) -->
+<!-- Stats -->
 <div class="container" style="margin: 60px auto;">
   <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
     <div class="stat-card"><div class="stat-number">12</div><div>semanas</div></div>
@@ -756,23 +711,22 @@
   </div>
 </div>
 
+<!-- PayPal -->
 <div id="pago-paypal" class="payment-section">
   <div class="container">
-    <span class="section-subtitle">Asegura tu lugar</span>
     <h2 class="section-title" style="margin-bottom: 16px;">Pago con PayPal</h2>
-    <p style="max-width: 550px; margin: 0 auto 20px;">Completa tu registro a través de PayPal. Elige la opción que mejor se adapte a ti.</p>
     <div class="payment-options" style="margin-bottom: 30px;">
-      <div class="payment-option-card"><i class="fas fa-credit-card"></i><h3>Pago de Contado</h3><p style="font-size: 1.5rem; font-weight: 700; color: var(--gold-dark);">$3,000 MXN</p><a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" target="_blank" class="paypal-button" style="padding: 10px 24px; font-size: 1rem;">Pagar ahora</a></div>
-      <div class="payment-option-card"><i class="fas fa-calendar-alt"></i><h3>Pago Diferido</h3><p style="font-size: 1.5rem; font-weight: 700; color: var(--gold-dark);">3 pagos de $1,000 MXN</p><a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" target="_blank" class="paypal-button" style="padding: 10px 24px; font-size: 1rem;">Suscribirme</a></div>
+      <div class="payment-option-card"><i class="fas fa-credit-card"></i><h3>Contado</h3><p style="font-size: 1.5rem; font-weight: 700;">$3,000 MXN</p><a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" target="_blank" class="paypal-button" style="padding: 10px 24px; font-size: 1rem;">Pagar ahora</a></div>
+      <div class="payment-option-card"><i class="fas fa-calendar-alt"></i><h3>Diferido</h3><p style="font-size: 1.5rem; font-weight: 700;">3 x $1,000 MXN</p><a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" target="_blank" class="paypal-button" style="padding: 10px 24px; font-size: 1rem;">Suscribirme</a></div>
     </div>
   </div>
 </div>
 
+<!-- Transferencia -->
 <div class="transfer-section">
   <div class="container">
     <div style="text-align: center; margin-bottom: 40px;">
-      <span class="section-subtitle">Formas de pago</span>
-      <h2 class="section-title">Transferencia o Depósito Bancario</h2>
+      <h2 class="section-title">Transferencia o Depósito</h2>
     </div>
     <div class="bank-card">
       <div class="bank-detail"><p><strong>Depósito:</strong> 4152 3145 9813 3463</p><button class="copy-btn" onclick="copyToClipboard('4152314598133463')">Copiar</button></div>
@@ -784,6 +738,7 @@
   </div>
 </div>
 
+<!-- Footer -->
 <footer>
   <div class="container">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
@@ -796,57 +751,34 @@
 </footer>
 
 <script>
-  // COUNTDOWN TIMER - Termina el 31 de marzo 2026 a las 23:59:59
+  // COUNTDOWN TIMER
   function updateCountdown() {
-    const targetDate = new Date(2026, 2, 31, 23, 59, 59); // Marzo es 2 (0-index)
+    const targetDate = new Date(2026, 2, 31, 23, 59, 59);
     const now = new Date();
     const diff = targetDate - now;
 
     if (diff <= 0) {
-      // Oferta terminada
       document.getElementById('countdown').style.display = 'none';
       document.getElementById('expired-message').style.display = 'inline-block';
-      // Ocultar botones de compra o mostrar mensaje
       const paypalButtons = document.querySelectorAll('.paypal-button');
-      paypalButtons.forEach(btn => {
-        btn.style.opacity = '0.5';
-        btn.style.pointerEvents = 'none';
-        btn.style.cursor = 'not-allowed';
-      });
-      const promoButtons = document.querySelectorAll('.btn-outline-light, a[href="#pago-paypal"]');
-      promoButtons.forEach(btn => {
-        if(btn.classList && btn.classList.contains('btn-outline-light')) {
-          btn.style.opacity = '0.5';
-          btn.style.pointerEvents = 'none';
-        }
-      });
+      paypalButtons.forEach(btn => { btn.style.opacity = '0.5'; btn.style.pointerEvents = 'none'; });
       return;
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    document.getElementById('days').textContent = String(days).padStart(2, '0');
-    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    document.getElementById('days').textContent = String(Math.floor(diff / (1000*60*60*24))).padStart(2,'0');
+    document.getElementById('hours').textContent = String(Math.floor((diff % (1000*60*60*24)) / (1000*60*60))).padStart(2,'0');
+    document.getElementById('minutes').textContent = String(Math.floor((diff % (1000*60*60)) / (1000*60))).padStart(2,'0');
+    document.getElementById('seconds').textContent = String(Math.floor((diff % (1000*60)) / 1000)).padStart(2,'0');
   }
-
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // Accordion functionality
+  // Accordion
   document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', function() {
-      this.parentElement.classList.toggle('active');
-    });
+    header.addEventListener('click', function() { this.parentElement.classList.toggle('active'); });
   });
 
-  function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(() => alert('Copiado: ' + text));
-  }
+  function copyToClipboard(text) { navigator.clipboard.writeText(text).then(() => alert('Copiado: ' + text)); }
 </script>
 </body>
 </html>
