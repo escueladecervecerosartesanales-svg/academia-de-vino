@@ -5,29 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Academia del Vino | José Guerrero – Diplomado en Ciencia y Tecnología del Vino</title>
   <meta name="description" content="Diplomado en Ciencia y Tecnología del Vino. Formación con rigor químico y microbiológico. Clases en vivo vía Zoom. Precio promocional $3,000 MXN. Inicio 1 de abril 2026.">
+
+  <!-- Preconnect: ahorra ~200ms en carga de recursos externos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Diplomado en Ciencia y Tecnología del Vino | Academia del Vino">
+  <meta property="og:description" content="12 semanas · +50 horas · Clases en vivo vía Zoom. De $8,500 a $3,000 MXN — oferta limitada.">
+  <meta property="og:image" content="https://images.pexels.com/photos/2912108/pexels-photo-2912108.jpeg?auto=compress&cs=tinysrgb&w=1200">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Diplomado en Ciencia y Tecnología del Vino">
+  <meta name="twitter:description" content="Formación científica con José Guerrero. Precio promocional $3,000 MXN.">
+  <meta name="twitter:image" content="https://images.pexels.com/photos/2912108/pexels-photo-2912108.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+  <!-- Structured Data: Course -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Diplomado en Ciencia y Tecnología del Vino",
+    "description": "Formación con rigor químico y microbiológico. 12 semanas, +50 horas lectivas, clases en vivo vía Zoom.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Academia del Vino",
+      "founder": {
+        "@type": "Person",
+        "name": "José Guerrero Garfias",
+        "jobTitle": "Químico, Consultor Vinícola"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "3000",
+      "priceCurrency": "MXN",
+      "availability": "https://schema.org/LimitedAvailability",
+      "validThrough": "2026-03-31T23:59:59"
+    },
+    "startDate": "2026-04-01",
+    "educationalLevel": "Intermediate",
+    "inLanguage": "es",
+    "deliveryMethod": "https://schema.org/Online"
+  }
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #FFFFFF;
-      font-family: 'Inter', sans-serif;
-      color: #1A1A1A;
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 56px;
-    }
-
+    /* ============================================
+       CUSTOM PROPERTIES
+       ============================================ */
     :root {
       --gold: #C8A86B;
       --gold-dark: #B28B4A;
@@ -38,12 +71,239 @@
       --text-medium: #5C5548;
       --discount-red: #C75C3E;
       --urgent-orange: #E67E22;
+      --focus-ring: 0 0 0 3px rgba(200, 168, 107, 0.5);
+      --transition-base: 0.3s ease;
     }
 
+    /* ============================================
+       RESET
+       ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 72px; /* Compensa nav sticky */
+    }
+
+    body {
+      background: #FFFFFF;
+      font-family: 'Inter', sans-serif;
+      color: #1A1A1A;
+      line-height: 1.6;
+    }
+
+    /* ============================================
+       ACCESIBILIDAD
+       ============================================ */
+    /* Skip link — solo visible con teclado */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: var(--gold);
+      color: var(--dark-charcoal);
+      padding: 8px 20px;
+      border-radius: 0 0 8px 8px;
+      font-weight: 600;
+      z-index: 10000;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Focus visible para todos los interactivos */
+    a:focus-visible,
+    button:focus-visible,
+    [tabindex]:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    /* Reducir movimiento si el usuario lo prefiere */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal { opacity: 1 !important; transform: none !important; }
+    }
+
+    /* ============================================
+       SCROLL PROGRESS BAR
+       ============================================ */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+      z-index: 10001;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ============================================
+       STICKY NAVIGATION
+       ============================================ */
+    .sticky-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: rgba(30, 27, 24, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(200, 168, 107, 0.3);
+      transform: translateY(-100%);
+      transition: transform 0.35s ease;
+    }
+    .sticky-nav.visible {
+      transform: translateY(0);
+    }
+    .sticky-nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .sticky-nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .sticky-nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .sticky-nav-links a {
+      color: rgba(255,255,245,0.85);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: color var(--transition-base);
+      white-space: nowrap;
+    }
+    .sticky-nav-links a:hover,
+    .sticky-nav-links a:focus-visible {
+      color: var(--gold);
+    }
+    .sticky-nav-cta {
+      background: var(--gold);
+      color: var(--dark-charcoal) !important;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 600 !important;
+      font-size: 0.8rem !important;
+    }
+    .sticky-nav-cta:hover {
+      background: #DAB87A;
+    }
+
+    /* ============================================
+       CONTAINER & UTILITIES
+       ============================================ */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 56px;
+    }
     .gold-text { color: var(--gold); }
     .text-center { text-align: center; }
-    
-    /* Hero Banner */
+
+    /* ============================================
+       TOAST NOTIFICATION
+       ============================================ */
+    .toast {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--dark-charcoal);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      z-index: 10002;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      border: 1px solid rgba(200, 168, 107, 0.4);
+      white-space: nowrap;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ============================================
+       WHATSAPP FLOATING BUTTON
+       ============================================ */
+    .wa-fab {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.7rem;
+      text-decoration: none;
+      z-index: 9998;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .wa-fab:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+    }
+    .wa-fab::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: rgba(37, 211, 102, 0.25);
+      animation: wa-pulse 2s ease-out infinite;
+    }
+    @keyframes wa-pulse {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.5); opacity: 0; }
+    }
+
+    /* ============================================
+       SCROLL REVEAL ANIMATIONS
+       ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================
+       HERO BANNER
+       ============================================ */
     .hero-banner {
       position: relative;
       width: 100%;
@@ -63,7 +323,9 @@
     .hero-badge-gold {
       background: rgba(200, 168, 107, 0.2);
       backdrop-filter: blur(4px);
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 8px 20px;
       border-radius: 50px;
       font-size: 0.7rem;
@@ -82,7 +344,7 @@
       margin-bottom: 1.2rem;
       text-shadow: 0 2px 12px rgba(0,0,0,0.3);
     }
-    .hero-banner-content .subhead {
+    .hero-subhead {
       font-size: 1.2rem;
       color: rgba(255,255,245,0.92);
       margin-bottom: 2rem;
@@ -101,6 +363,13 @@
       border: 1px solid rgba(200, 168, 107, 0.5);
       margin-top: 20px;
     }
+    .price-label {
+      font-size: 0.75rem;
+      color: #b0a088;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
     .price-original {
       font-size: 1rem;
       text-decoration: line-through;
@@ -113,6 +382,20 @@
       font-weight: 700;
       color: var(--gold);
     }
+    .discount-badge {
+      font-size: 0.8rem;
+      color: var(--urgent-orange);
+      font-weight: 600;
+      margin-top: 5px;
+    }
+    .price-note {
+      font-size: 0.7rem;
+      color: #e6d5b3;
+    }
+
+    /* ============================================
+       BUTTONS
+       ============================================ */
     .btn-outline-light {
       background: var(--gold);
       border: none;
@@ -120,19 +403,62 @@
       padding: 12px 32px;
       border-radius: 60px;
       font-weight: 600;
-      transition: all 0.3s;
+      transition: background var(--transition-base), transform var(--transition-base);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 10px;
       cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
     }
-    .btn-outline-light:hover {
-      background: #DAB87A;
-      transform: translateY(-2px);
+    @media (hover: hover) {
+      .btn-outline-light:hover {
+        background: #DAB87A;
+        transform: translateY(-2px);
+      }
+    }
+    .btn-gold-large {
+      background: var(--gold);
+      color: #1E1B18;
+      padding: 14px 40px;
+      border-radius: 60px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      transition: background var(--transition-base), transform var(--transition-base);
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+    @media (hover: hover) {
+      .btn-gold-large:hover {
+        background: var(--gold-dark);
+        transform: translateY(-2px);
+      }
+    }
+    .btn-wa-gold {
+      background: var(--gold);
+      color: white !important;
+      padding: 14px 32px;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background var(--transition-base), transform var(--transition-base);
+      font-size: 1rem;
+    }
+    @media (hover: hover) {
+      .btn-wa-gold:hover {
+        background: var(--gold-dark);
+        transform: scale(1.02);
+      }
     }
 
-    /* Timer Section */
+    /* ============================================
+       TIMER SECTION
+       ============================================ */
     .timer-section {
       background: linear-gradient(135deg, #1E1B18 0%, #2A2520 100%);
       padding: 40px 0;
@@ -148,6 +474,10 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
+    }
+    .timer-label {
+      color: var(--gold-light);
+      letter-spacing: 2px;
     }
     .countdown {
       display: flex;
@@ -189,16 +519,16 @@
       display: inline-block;
     }
 
-    /* Secciones */
-    .section { padding: 80px 0; background: white; }
-    .section-light { background: var(--soft-gray); padding: 80px 0; }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 600;
-      color: var(--dark-charcoal);
-      margin-bottom: 0.75rem;
-      text-align: center;
+    /* ============================================
+       SECTIONS
+       ============================================ */
+    .section {
+      padding: 80px 0;
+      background: white;
+    }
+    .section-light {
+      background: var(--soft-gray);
+      padding: 80px 0;
     }
     .section-subtitle {
       color: var(--gold-dark);
@@ -209,14 +539,39 @@
       margin-bottom: 1rem;
       text-align: center;
     }
+    .section-subtitle--left {
+      text-align: left;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      color: var(--dark-charcoal);
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+    .section-title--left {
+      text-align: left;
+      font-size: 2.5rem;
+    }
     .divider-gold {
       width: 80px;
       height: 2px;
       background: var(--gold);
       margin: 20px auto 35px;
     }
+    .divider-gold--left {
+      margin: 20px 0 25px;
+    }
 
-    /* Author Card - Foto más grande */
+    /* ============================================
+       AUTHOR CARD
+       ============================================ */
+    .grid-2col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
     .author-card {
       background: white;
       padding: 32px 40px;
@@ -236,6 +591,42 @@
       border: 3px solid var(--gold);
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
+    .author-name {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--dark-charcoal);
+      margin-bottom: 8px;
+    }
+    .author-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      margin-bottom: 12px;
+    }
+    .author-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .author-badge {
+      background: var(--soft-gray);
+      padding: 8px 18px;
+      border-radius: 40px;
+      display: inline-block;
+      font-size: 0.88rem;
+    }
+    .author-quote {
+      margin-top: 16px;
+      color: var(--text-medium);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    /* ============================================
+       CONTACT CARD
+       ============================================ */
     .contact-card {
       background: white;
       border-radius: 32px;
@@ -247,22 +638,30 @@
       flex-direction: column;
       justify-content: center;
     }
-    .btn-wa-gold {
-      background: var(--gold);
-      color: white !important;
-      padding: 14px 32px;
-      border-radius: 60px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-      font-size: 1rem;
+    .contact-card h3 {
+      margin-bottom: 20px;
     }
-    .btn-wa-gold:hover { background: var(--gold-dark); transform: scale(1.02); }
+    .contact-item {
+      margin-bottom: 20px;
+    }
+    .contact-item a {
+      text-decoration: none;
+      color: var(--text-dark);
+      transition: color var(--transition-base);
+    }
+    .contact-item a:hover,
+    .contact-item a:focus-visible {
+      color: var(--gold);
+    }
+    .contact-response-time {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: var(--text-medium);
+    }
 
-    /* Benefits Grid */
+    /* ============================================
+       BENEFITS GRID
+       ============================================ */
     .benefits-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -274,24 +673,41 @@
       border-radius: 28px;
       padding: 36px 28px;
       text-align: center;
-      transition: all 0.3s;
+      transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
       border: 1px solid rgba(200, 168, 107, 0.2);
       box-shadow: 0 5px 15px rgba(0,0,0,0.02);
     }
-    .benefit-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--gold);
-      box-shadow: 0 25px 40px -15px rgba(0,0,0,0.1);
+    @media (hover: hover) {
+      .benefit-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--gold);
+        box-shadow: 0 25px 40px -15px rgba(0,0,0,0.1);
+      }
     }
-    .benefit-icon { font-size: 2.8rem; color: var(--gold); margin-bottom: 20px; }
+    .benefit-icon {
+      font-size: 2.8rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
     .benefit-card h3 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.6rem;
       margin-bottom: 12px;
     }
+    .benefit-extra {
+      margin-top: 10px;
+      font-size: 0.85rem;
+    }
 
-    /* Accordion */
-    .accordion { margin-top: 30px; max-width: 1000px; margin-left: auto; margin-right: auto; }
+    /* ============================================
+       ACCORDION
+       ============================================ */
+    .accordion {
+      margin-top: 30px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     .accordion-item {
       background: white;
       border-radius: 20px;
@@ -310,9 +726,23 @@
       font-size: 1.2rem;
       font-family: 'Cormorant Garamond', serif;
       color: var(--dark-charcoal);
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+      transition: background var(--transition-base);
     }
-    .accordion-header:hover { background: var(--soft-gray); }
-    .accordion-header i { color: var(--gold); transition: transform 0.3s; }
+    @media (hover: hover) {
+      .accordion-header:hover {
+        background: var(--soft-gray);
+      }
+    }
+    .accordion-chevron {
+      color: var(--gold);
+      transition: transform var(--transition-base);
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
     .accordion-content {
       max-height: 0;
       overflow: hidden;
@@ -320,9 +750,23 @@
       background: #FEFCF9;
       border-top: 1px solid rgba(200, 168, 107, 0.1);
     }
-    .accordion-content-inner { padding: 28px 32px; }
-    .accordion-item.active .accordion-content { max-height: 800px; }
-    .accordion-item.active .accordion-header i { transform: rotate(180deg); }
+    .accordion-content-inner {
+      padding: 28px 32px;
+    }
+    .accordion-item.active .accordion-content {
+      max-height: 800px;
+    }
+    .accordion-item.active .accordion-chevron {
+      transform: rotate(180deg);
+    }
+    .week-title {
+      font-weight: 600;
+      margin: 16px 0 8px;
+      font-size: 0.95rem;
+    }
+    .week-title:first-child {
+      margin-top: 0;
+    }
     .topic-list-module {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -338,9 +782,12 @@
       left: 0;
       top: 11px;
       color: var(--gold);
+      font-size: 0.7rem;
     }
 
-    /* Price Box */
+    /* ============================================
+       PRICE BOX
+       ============================================ */
     .price-big {
       background: linear-gradient(135deg, #FEFAF3, #FFFCF8);
       border-radius: 32px;
@@ -348,6 +795,7 @@
       border: 1px solid rgba(200, 168, 107, 0.4);
       text-align: center;
       min-width: 280px;
+      align-self: flex-start;
     }
     .price-number {
       font-family: 'Cormorant Garamond', serif;
@@ -381,8 +829,49 @@
       display: inline-block;
       margin-top: 12px;
     }
+    .price-disclaimer {
+      font-size: 0.7rem;
+      margin-top: 12px;
+      color: var(--text-medium);
+    }
 
-    /* Payment Options */
+    /* ============================================
+       FLEX LAYOUTS
+       ============================================ */
+    .flex-between {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+    .flex-between--start {
+      align-items: flex-start;
+    }
+    .info-item {
+      margin-bottom: 6px;
+    }
+    .zoom-info {
+      background: rgba(200, 168, 107, 0.1);
+      border-radius: 50px;
+      padding: 12px 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .start-date {
+      background: rgba(200, 168, 107, 0.15);
+      padding: 10px 24px;
+      border-radius: 50px;
+      display: inline-block;
+      font-weight: 500;
+      margin-top: 20px;
+    }
+
+    /* ============================================
+       PAYMENT OPTIONS
+       ============================================ */
     .payment-options {
       display: flex;
       flex-wrap: wrap;
@@ -398,16 +887,38 @@
       min-width: 260px;
       text-align: center;
       border: 1px solid rgba(200, 168, 107, 0.3);
-      transition: all 0.3s;
+      transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
     }
-    .payment-option-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--gold);
-      box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1);
+    @media (hover: hover) {
+      .payment-option-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--gold);
+        box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1);
+      }
     }
-    .payment-option-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
+    .payment-option-card i {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+    .payment-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold-dark);
+      margin: 10px 0;
+    }
+    .payment-note {
+      font-size: 0.75rem;
+      color: var(--urgent-orange);
+      margin-top: 8px;
+    }
+    .payment-note--muted {
+      color: var(--text-medium);
+    }
 
-    /* Bank Card */
+    /* ============================================
+       BANK CARD
+       ============================================ */
     .bank-card {
       background: var(--soft-gray);
       border-radius: 32px;
@@ -423,6 +934,12 @@
       margin: 20px 0;
       border: 1px solid rgba(200, 168, 107, 0.2);
     }
+    .bank-number {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold-dark);
+      display: inline;
+    }
     .copy-btn {
       background: var(--gold);
       border: none;
@@ -431,10 +948,35 @@
       font-size: 0.7rem;
       cursor: pointer;
       margin-left: 12px;
-      transition: all 0.2s;
+      transition: background var(--transition-base);
+      font-family: 'Inter', sans-serif;
     }
-    .copy-btn:hover { background: var(--gold-dark); color: white; }
+    @media (hover: hover) {
+      .copy-btn:hover {
+        background: var(--gold-dark);
+        color: white;
+      }
+    }
+    .bank-instructions {
+      background: rgba(200,168,107,0.1);
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 10px;
+    }
 
+    /* ============================================
+       STATS
+       ============================================ */
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin: 60px auto;
+      max-width: 1280px;
+      padding: 0 56px;
+    }
     .stat-card {
       background: white;
       border: 1px solid rgba(200,168,107,0.2);
@@ -451,310 +993,798 @@
       color: var(--gold);
     }
 
-    footer {
+    /* ============================================
+       FOOTER
+       ============================================ */
+    .site-footer {
       background: #141210;
       color: #E8DFD3;
       padding: 60px 0 40px;
       border-top: 2px solid rgba(200, 168, 107, 0.3);
     }
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+    }
+    .footer-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+    .footer-links a {
+      color: #E8DFD3;
+      text-decoration: none;
+      transition: color var(--transition-base);
+    }
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: var(--gold);
+    }
+    .footer-divider {
+      margin: 40px 0 25px;
+      border: none;
+      border-top: 1px solid rgba(200,168,107,0.2);
+    }
+    .footer-copy {
+      font-size: 0.7rem;
+      text-align: center;
+    }
 
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
     @media (max-width: 900px) {
       .container { padding: 0 28px; }
+      .stats-row { padding: 0 28px; }
       .hero-banner-content h1 { font-size: 2.8rem; }
       .section-title { font-size: 2.2rem; }
-      .price-card-hero { flex-direction: column; align-items: flex-start; }
+      .section-title--left { font-size: 2rem; }
+      .price-card-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 28px;
+      }
       .author-photo { width: 90px; height: 90px; }
       .author-card { padding: 24px; gap: 20px; }
       .countdown-item { min-width: 80px; padding: 10px 15px; }
       .countdown-number { font-size: 2rem; }
+      .sticky-nav-links { gap: 16px; }
+      .sticky-nav-links a { font-size: 0.72rem; }
+      .bank-card { padding: 24px; }
     }
-    .flex-between { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 30px; }
-    .grid-2col { display: flex; flex-wrap: wrap; gap: 40px; }
-    .contact-item a { text-decoration: none; color: var(--text-dark); }
-    .contact-item a:hover { color: var(--gold); }
-    .start-date {
-      background: rgba(200, 168, 107, 0.15);
-      padding: 10px 24px;
-      border-radius: 50px;
-      display: inline-block;
-      font-weight: 500;
+    @media (max-width: 600px) {
+      .hero-banner-content { padding: 60px 24px; }
+      .hero-banner-content h1 { font-size: 2.2rem; }
+      .sticky-nav-links { display: none; }
+      .price-big { min-width: unset; padding: 24px; }
+      .price-number { font-size: 2.8rem; }
+      .topic-list-module { grid-template-columns: 1fr; }
     }
-    .zoom-info {
-      background: rgba(200, 168, 107, 0.1);
-      border-radius: 50px;
-      padding: 12px 24px;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 15px;
-    }
-    .btn-gold-large {
-      background: var(--gold);
-      color: #1E1B18;
-      padding: 14px 40px;
-      border-radius: 60px;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s;
-      font-size: 1rem;
-    }
-    .btn-gold-large:hover { background: var(--gold-dark); transform: translateY(-2px); }
   </style>
 </head>
 <body>
 
-<!-- HERO BANNER -->
-<div class="hero-banner">
-  <div class="hero-banner-content">
-    <span class="hero-badge-gold"><i class="fas fa-wine-bottle"></i>  ACADEMIA DEL VINO · DESDE 2019</span>
-    <h1>Diplomado en Ciencia<br>y Tecnología del Vino</h1>
-    <p class="subhead">Domina la química, microbiología y procesos de elaboración del vino con un enfoque científico y práctico. Formación impartida por el reconocido consultor José Guerrero.</p>
-    <div class="price-card-hero">
-      <div>
-        <div class="price-label">Precio regular</div>
-        <div><span class="price-original">$8,500 MXN</span> <span class="price-amount">$3,000 MXN</span></div>
-        <div class="discount-badge" style="margin-top: 5px;">🔥 Ahorra $5,500 MXN</div>
-      </div>
-      <div>
-        <a href="#pago-paypal" class="btn-outline-light"><i class="fab fa-paypal"></i> Inscribirme ahora</a>
-      </div>
-      <div style="font-size:0.7rem; color:#e6d5b3;">*Certificado incluido · Acceso vitalicio a videos</div>
-    </div>
-  </div>
-</div>
+  <!-- Skip Navigation -->
+  <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
-<!-- TIMER - URGENCIA -->
-<div class="timer-section">
-  <div class="container text-center">
-    <div class="urgent-text">
-      <i class="fas fa-hourglass-half"></i>
-      <span>⚠️ OFERTA POR TIEMPO LIMITADO ⚠️</span>
-      <i class="fas fa-exclamation-triangle"></i>
-    </div>
-    <div class="timer-label" style="color: var(--gold-light); letter-spacing: 2px;">La promoción termina en:</div>
-    <div id="countdown" class="countdown">
-      <div class="countdown-item"><div id="days" class="countdown-number">00</div><div class="countdown-label">Días</div></div>
-      <div class="countdown-item"><div id="hours" class="countdown-number">00</div><div class="countdown-label">Horas</div></div>
-      <div class="countdown-item"><div id="minutes" class="countdown-number">00</div><div class="countdown-label">Minutos</div></div>
-      <div class="countdown-item"><div id="seconds" class="countdown-number">00</div><div class="countdown-label">Segundos</div></div>
-    </div>
-    <div id="expired-message" style="display: none;" class="timer-expired">
-      <i class="fas fa-clock"></i> La oferta ha terminado · Precio regular $8,500 MXN
-    </div>
-    <p style="color: rgba(255,255,245,0.8); margin-top: 20px; font-size: 0.9rem;">
-      <i class="fas fa-gift gold-text"></i> <strong>¡Última oportunidad!</strong> Inscríbete hoy y asegura tu lugar con el precio especial de <strong class="gold-text">$3,000 MXN</strong>
-    </p>
-  </div>
-</div>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress" role="presentation" aria-hidden="true"></div>
 
-<!-- PERFIL + CONTACTO - FOTO MÁS GRANDE -->
-<div class="section" style="padding-top: 70px; padding-bottom: 40px;">
-  <div class="container">
-    <div class="grid-2col">
-      <div style="flex: 1.5;">
-        <div class="author-card">
-          <img src="https://i.postimg.cc/Gt0rQP3C/Whats-App-Image-2026-03-28-at-11-58-58-AM.jpg" alt="José Guerrero - Químico y Consultor Enológico" class="author-photo">
+  <!-- Sticky Navigation (aparece al hacer scroll) -->
+  <nav class="sticky-nav" id="stickyNav" aria-label="Navegación principal">
+    <div class="sticky-nav-inner">
+      <a href="#" class="sticky-nav-brand"><i class="fas fa-wine-bottle" aria-hidden="true"></i> Academia del Vino</a>
+      <ul class="sticky-nav-links">
+        <li><a href="#perfil">Perfil</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#programa">Programa</a></li>
+        <li><a href="#temario">Temario</a></li>
+        <li><a href="#pago-paypal" class="sticky-nav-cta">Inscribirme</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/5214921344124?text=Hola%20Jos%C3%A9,%20me%20interesa%20el%20Diplomado%20en%20Ciencia%20y%20Tecnolog%C3%ADa%20del%20Vino"
+     class="wa-fab"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+  </a>
+
+  <main id="main-content">
+
+    <!-- ================================
+         HERO BANNER
+         ================================ -->
+    <header class="hero-banner">
+      <div class="hero-banner-content">
+        <span class="hero-badge-gold">
+          <i class="fas fa-wine-bottle" aria-hidden="true"></i>
+          ACADEMIA DEL VINO · DESDE 2019
+        </span>
+        <h1>Diplomado en Ciencia<br>y Tecnología del Vino</h1>
+        <p class="hero-subhead">Domina la química, microbiología y procesos de elaboración del vino con un enfoque científico y práctico. Formación impartida por el reconocido consultor José Guerrero.</p>
+        <div class="price-card-hero">
           <div>
-            <p style="font-weight: 700; font-size: 1.6rem; color: var(--dark-charcoal); margin-bottom: 8px;">José Guerrero Garfias</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 12px; font-size: 0.9rem; color: var(--text-medium); margin-bottom: 12px;">
-              <span><i class="fas fa-atom gold-text"></i> Químico de profesión</span>
-              <span><i class="fas fa-champagne-glasses gold-text"></i> Consultor vinícola & cervecería artesanal e industrial</span>
-              <span><i class="fas fa-users gold-text"></i> +500 profesionales capacitados</span>
+            <div class="price-label">Precio regular</div>
+            <div>
+              <span class="price-original">$8,500 MXN</span>
+              <span class="price-amount">$3,000 MXN</span>
             </div>
-            <div class="stats-badge" style="background: var(--soft-gray); padding: 8px 18px; border-radius: 40px; display: inline-block;">
-              🏅 7 años de experiencia formando enólogos y cerveceros en México y Latinoamérica
+            <div class="discount-badge" aria-hidden="true">🔥 Ahorra $5,500 MXN</div>
+          </div>
+          <div>
+            <a href="#pago-paypal" class="btn-outline-light">
+              <i class="fab fa-paypal" aria-hidden="true"></i> Inscribirme ahora
+            </a>
+          </div>
+          <div class="price-note">*Certificado incluido · Acceso vitalicio a videos</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================================
+         TIMER
+         ================================ -->
+    <section class="timer-section" aria-label="Cuenta regresiva de oferta">
+      <div class="container text-center">
+        <div class="urgent-text">
+          <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+          <span>⚠️ OFERTA POR TIEMPO LIMITADO ⚠️</span>
+          <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+        </div>
+        <div class="timer-label">La promoción termina en:</div>
+        <div id="countdown" class="countdown" aria-label="Cuenta regresiva">
+          <div class="countdown-item">
+            <div id="days" class="countdown-number" aria-label="Días">00</div>
+            <div class="countdown-label">Días</div>
+          </div>
+          <div class="countdown-item">
+            <div id="hours" class="countdown-number" aria-label="Horas">00</div>
+            <div class="countdown-label">Horas</div>
+          </div>
+          <div class="countdown-item">
+            <div id="minutes" class="countdown-number" aria-label="Minutos">00</div>
+            <div class="countdown-label">Minutos</div>
+          </div>
+          <div class="countdown-item">
+            <div id="seconds" class="countdown-number" aria-label="Segundos">00</div>
+            <div class="countdown-label">Segundos</div>
+          </div>
+        </div>
+        <div id="expired-message" style="display: none;" class="timer-expired" role="alert">
+          <i class="fas fa-clock" aria-hidden="true"></i> La oferta ha terminado · Precio regular $8,500 MXN
+        </div>
+        <p style="color: rgba(255,255,245,0.8); margin-top: 20px; font-size: 0.9rem;">
+          <i class="fas fa-gift gold-text" aria-hidden="true"></i>
+          <strong>¡Última oportunidad!</strong> Inscríbete hoy y asegura tu lugar con el precio especial de
+          <strong class="gold-text">$3,000 MXN</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================================
+         PERFIL + CONTACTO
+         ================================ -->
+    <section id="perfil" class="section" style="padding-top: 70px; padding-bottom: 40px;" aria-label="Perfil del instructor">
+      <div class="container">
+        <div class="grid-2col reveal">
+          <div style="flex: 1.5;">
+            <article class="author-card">
+              <img
+                src="https://i.postimg.cc/Gt0rQP3C/Whats-App-Image-2026-03-28-at-11-58-58-AM.jpg"
+                alt="José Guerrero Garfias — Químico y Consultor Enológico"
+                class="author-photo"
+                width="120" height="120"
+                loading="lazy"
+              >
+              <div>
+                <h2 class="author-name">José Guerrero Garfias</h2>
+                <div class="author-tags">
+                  <span class="author-tag"><i class="fas fa-atom gold-text" aria-hidden="true"></i> Químico de profesión</span>
+                  <span class="author-tag"><i class="fas fa-champagne-glasses gold-text" aria-hidden="true"></i> Consultor vinícola & cervecero</span>
+                  <span class="author-tag"><i class="fas fa-users gold-text" aria-hidden="true"></i> +500 profesionales capacitados</span>
+                </div>
+                <div class="author-badge">
+                  🏅 7 años de experiencia formando enólogos y cerveceros en México y Latinoamérica
+                </div>
+                <p class="author-quote">
+                  <i class="fas fa-quote-left gold-text" aria-hidden="true"></i>
+                  Mi misión es compartir el conocimiento científico detrás del vino, formando profesionales capaces de transformar la industria con rigor técnico y pasión.
+                </p>
+              </div>
+            </article>
+          </div>
+          <div style="flex: 1;">
+            <div class="contact-card">
+              <i class="fas fa-headset" style="font-size: 2rem; color: var(--gold); margin-bottom: 15px;" aria-hidden="true"></i>
+              <h3>¿Tienes preguntas?</h3>
+              <div class="contact-item">
+                <a href="https://wa.me/5214921344124?text=Hola%20Jos%C3%A9,%20me%20interesa%20el%20Diplomado%20en%20Ciencia%20y%20Tecnolog%C3%ADa%20del%20Vino" target="_blank" rel="noopener noreferrer" class="btn-wa-gold">
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i> +52 492 134 4124
+                </a>
+              </div>
+              <div class="contact-item">
+                <i class="far fa-envelope gold-text" aria-hidden="true"></i>
+                <a href="mailto:jmggarfias@gmail.com">jmggarfias@gmail.com</a>
+              </div>
+              <div class="contact-response-time">
+                <i class="fas fa-clock gold-text" aria-hidden="true"></i> Respuesta en menos de 24 horas
+              </div>
             </div>
-            <p style="margin-top: 16px; color: var(--text-medium); font-size: 0.9rem;">
-              <i class="fas fa-quote-left gold-text"></i> Mi misión es compartir el conocimiento científico detrás del vino, formando profesionales capaces de transformar la industria con rigor técnico y pasión.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         BENEFICIOS
+         ================================ -->
+    <section id="beneficios" class="section-light" aria-label="Beneficios del diplomado">
+      <div class="container">
+        <div class="section-subtitle reveal">¿Por qué este diplomado es para ti?</div>
+        <h2 class="section-title reveal">Transforma tu carrera con la ciencia del vino</h2>
+        <div class="divider-gold reveal"></div>
+        <div class="benefits-grid">
+          <div class="benefit-card reveal">
+            <div class="benefit-icon"><i class="fas fa-chalkboard-user" aria-hidden="true"></i></div>
+            <h3>Clases en vivo vía Zoom</h3>
+            <p>Todos los miércoles. Interactúa en tiempo real con el instructor y resuelve tus dudas al instante.</p>
+            <p class="benefit-extra"><i class="fas fa-video gold-text" aria-hidden="true"></i> <strong>+ Grabaciones ilimitadas</strong></p>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-icon"><i class="fas fa-flask" aria-hidden="true"></i></div>
+            <h3>Enfoque práctico y real</h3>
+            <p>Análisis de casos reales en bodega, resolución de problemas fermentativos y control de calidad aplicado.</p>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-icon"><i class="fas fa-certificate" aria-hidden="true"></i></div>
+            <h3>Certificación con aval</h3>
+            <p>Diploma digital firmado por José Guerrero, respaldando tu especialización y conocimientos técnicos.</p>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+            <h3>Proyecto final integrador</h3>
+            <p>Desarrolla tu propio plan de vinificación con retroalimentación personalizada del consultor.</p>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+            <h3>Networking profesional</h3>
+            <p>Conecta con colegas, enólogos y cerveceros de toda Latinoamérica en nuestra comunidad exclusiva.</p>
+          </div>
+          <div class="benefit-card reveal">
+            <div class="benefit-icon"><i class="fas fa-infinity" aria-hidden="true"></i></div>
+            <h3>Acceso a las clases grabadas</h3>
+            <p>Todo el material, grabaciones y actualizaciones disponibles. Aprende a tu ritmo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         INFO DIPLOMADO + PRECIO
+         ================================ -->
+    <section id="programa" class="section" aria-label="Información del programa y precio">
+      <div class="container">
+        <div class="flex-between flex-between--start reveal">
+          <div>
+            <div class="section-subtitle section-subtitle--left">Programa completo</div>
+            <h2 class="section-title section-title--left">Diplomado en Ciencia<br>y Tecnología del Vino</h2>
+            <div class="divider-gold divider-gold--left"></div>
+            <p class="info-item"><i class="fas fa-calendar-alt gold-text" aria-hidden="true"></i> <strong>12 semanas de inmersión</strong> · Modalidad online vía Zoom</p>
+            <p class="info-item"><i class="fas fa-calendar-week gold-text" aria-hidden="true"></i> <strong>Clases en vivo:</strong> Todos los miércoles (2–3 horas por sesión)</p>
+            <p class="info-item"><i class="fas fa-clock gold-text" aria-hidden="true"></i> <strong>Más de 50 horas lectivas</strong> entre clases en vivo, material complementario y asesorías</p>
+            <div class="zoom-info">
+              <i class="fab fa-zoom" style="color: var(--gold); font-size: 1.2rem;" aria-hidden="true"></i>
+              <span><strong>Plataforma:</strong> Zoom · Interacción directa con el instructor</span>
+            </div>
+            <div class="start-date">
+              <i class="fas fa-calendar-check gold-text" aria-hidden="true"></i>
+              <strong>Próxima generación: 1 de abril de 2026</strong> · Cupos limitados
+            </div>
+          </div>
+          <div class="price-big">
+            <span style="font-size: 0.8rem; letter-spacing: 2px;">INVERSIÓN PROMOCIONAL</span>
+            <div>
+              <span class="price-original-big">$8,500 MXN</span>
+              <span class="price-number">$3,000 MXN</span>
+            </div>
+            <div class="promo-badge" aria-hidden="true">🔥 Ahorra $5,500 MXN</div>
+            <div class="urgent-badge" aria-hidden="true">⏰ Válido solo hasta el 31 de marzo 2026</div>
+            <div class="price-disclaimer">*Pago único · Certificado digital · Acceso vitalicio a videos</div>
+            <a href="#pago-paypal" class="btn-gold-large" style="margin-top: 20px;">Aprovechar oferta</a>
+          </div>
+        </div>
+
+        <!-- Opciones de pago -->
+        <div class="payment-options reveal">
+          <div class="payment-option-card">
+            <i class="fas fa-credit-card" aria-hidden="true"></i>
+            <h3>Pago de Contado</h3>
+            <p class="payment-price">$3,000 MXN</p>
+            <p>Pago único · Acceso inmediato</p>
+            <p class="payment-note">⚡ Precio promocional</p>
+          </div>
+          <div class="payment-option-card">
+            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+            <h3>Pago Diferido</h3>
+            <p class="payment-price">3 pagos de $1,000 MXN</p>
+            <p>Mensualidades fijas · Sin intereses</p>
+            <p class="payment-note payment-note--muted">*Primer pago al inscribirte</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         TEMARIO DESPLEGABLE
+         ================================ -->
+    <section id="temario" class="section-light" aria-label="Temario del diplomado">
+      <div class="container">
+        <div class="section-subtitle reveal">Plan de estudios</div>
+        <h2 class="section-title reveal">Descubre todo lo que aprenderás</h2>
+        <div class="divider-gold reveal"></div>
+        <p class="text-center reveal" style="max-width: 700px; margin: 0 auto 40px;">Haz clic en cada módulo para desplegar el contenido completo</p>
+
+        <div class="accordion reveal" role="list">
+          <!-- Módulo I -->
+          <div class="accordion-item" role="listitem">
+            <button
+              class="accordion-header"
+              aria-expanded="false"
+              aria-controls="module-1-content"
+              id="module-1-header"
+            >
+              <span>📅 MÓDULO I – Fundamentos Científicos de la Vitivinicultura</span>
+              <i class="fas fa-chevron-down accordion-chevron" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-content" id="module-1-content" role="region" aria-labelledby="module-1-header">
+              <div class="accordion-content-inner">
+                <div class="week-title">🔬 Semana 1 – Introducción a la Ciencia del Vino</div>
+                <ul class="topic-list-module">
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Historia técnica del vino · Composición química de la uva</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Fisiología de la maduración · Variedades Vitis vinifera</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Parámetros de calidad de vendimia</li>
+                </ul>
+                <div class="week-title">🍇 Semana 2 – Química del Mosto</div>
+                <ul class="topic-list-module">
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Azúcares (glucosa/fructosa) · Ácidos orgánicos (tartárico, málico, cítrico)</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> pH y acidez total · Nitrógeno asimilable (YAN)</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Compuestos fenólicos · Cálculo de alcohol probable</li>
+                </ul>
+                <div class="week-title">🦠 Semana 3 – Microbiología del Vino</div>
+                <ul class="topic-list-module">
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Levaduras vínicas: Saccharomyces cerevisiae y no-Saccharomyces</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Bacterias lácticas: Oenococcus oeni · Bacterias acéticas</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Control microbiológico y prevención de contaminaciones</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo II -->
+          <div class="accordion-item" role="listitem">
+            <button
+              class="accordion-header"
+              aria-expanded="false"
+              aria-controls="module-2-content"
+              id="module-2-header"
+            >
+              <span>🍷 MÓDULO II – Proceso de Elaboración del Vino</span>
+              <i class="fas fa-chevron-down accordion-chevron" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-content" id="module-2-content" role="region" aria-labelledby="module-2-header">
+              <div class="accordion-content-inner">
+                <div class="week-title">⚙️ Semana 4 – Vinos Tintos</div>
+                <ul class="topic-list-module">
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Recepción y molienda · Maceración y fermentación alcohólica</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Control de temperatura · Remontados y bazuqueos</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Descube y prensado</li>
+                </ul>
+                <div class="week-title">❄️ Semana 5 – Vinos Blancos y Rosados</div>
+                <ul class="topic-list-module">
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Prensado directo · Desfangado · Fermentación controlada</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Diferencias tecnológicas con tintos</li>
+                </ul>
+                <div class="week-title">🧪 Semana 6 – Fermentaciones</div>
+                <ul class="topic-list-module">
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Cinética fermentativa · Factores que afectan la fermentación</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Fermentación maloláctica · Problemas fermentativos y soluciones</li>
+                </ul>
+                <div class="week-title">🪵 Semana 7 – Crianza y Estabilización</div>
+                <ul class="topic-list-module">
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Crianza en acero vs barrica · Tipos de madera</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Estabilización tartárica y proteica · Filtración · Uso de SO₂</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo III -->
+          <div class="accordion-item" role="listitem">
+            <button
+              class="accordion-header"
+              aria-expanded="false"
+              aria-controls="module-3-content"
+              id="module-3-header"
+            >
+              <span>🔬 MÓDULO III – Laboratorio de Calidad y Control</span>
+              <i class="fas fa-chevron-down accordion-chevron" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-content" id="module-3-content" role="region" aria-labelledby="module-3-header">
+              <div class="accordion-content-inner">
+                <div class="week-title">🧫 Semana 8 – Microbiología Enológica</div>
+                <ul class="topic-list-module">
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Medios de cultivo · Conteo en placa</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Control de fermentaciones · Identificación de contaminaciones</li>
+                </ul>
+                <div class="week-title">⚗️ Semana 9 – Análisis Químico</div>
+                <ul class="topic-list-module">
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Determinación de pH · Acidez total y volátil</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Alcohol (% v/v) · Azúcares reductores · SO₂ libre y total</li>
+                </ul>
+                <div class="week-title">📊 Semana 10 – Control de Calidad</div>
+                <ul class="topic-list-module">
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Parámetros de exportación · Defectos del vino</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Estabilidad microbiológica · Trazabilidad · Gestión de calidad</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Módulo IV -->
+          <div class="accordion-item" role="listitem">
+            <button
+              class="accordion-header"
+              aria-expanded="false"
+              aria-controls="module-4-content"
+              id="module-4-header"
+            >
+              <span>🧠 MÓDULO IV – Innovación, Defectos y Proyecto Final</span>
+              <i class="fas fa-chevron-down accordion-chevron" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-content" id="module-4-content" role="region" aria-labelledby="module-4-header">
+              <div class="accordion-content-inner">
+                <div class="week-title">🍾 Semana 11 – Defectos y Alteraciones</div>
+                <ul class="topic-list-module">
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Brettanomyces · Picado acético · Refermentación en botella</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Reducción y oxidación · Casos reales y resolución técnica</li>
+                </ul>
+                <div class="week-title">🎓 Semana 12 – Proyecto Final Integrador</div>
+                <ul class="topic-list-module">
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Diseño de proceso de vinificación (tinto o blanco)</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Plan de control microbiológico · Programa de análisis de laboratorio</li>
+                  <li><i class="fas fa-check" aria-hidden="true"></i> Protocolo de estabilización y embotellado · Presentación online</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         STATS
+         ================================ -->
+    <div class="stats-row reveal" aria-label="Estadísticas del diplomado">
+      <div class="stat-card">
+        <div class="stat-number">12</div>
+        <div>semanas de inmersión</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">+500</div>
+        <div>profesionales formados</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">+50</div>
+        <div>horas lectivas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div>acceso a grabaciones</div>
+      </div>
+    </div>
+
+    <!-- ================================
+         PAYPAL
+         ================================ -->
+    <section id="pago-paypal" style="background: linear-gradient(135deg, #FEFAF5, #FDF9F2); padding: 80px 0; text-align: center;" aria-label="Pago con PayPal">
+      <div class="container">
+        <div class="section-subtitle reveal">Asegura tu lugar</div>
+        <h2 class="section-title reveal">Pago con PayPal</h2>
+        <p class="reveal" style="max-width: 550px; margin: 0 auto 25px;">Elige la opción que mejor se adapte a ti. Cupos limitados, reserva ahora.</p>
+        <div class="payment-options reveal" style="margin-bottom: 20px;">
+          <div class="payment-option-card">
+            <i class="fab fa-paypal" aria-hidden="true"></i>
+            <h3>Pago de Contado</h3>
+            <p class="payment-price">$3,000 MXN</p>
+            <!-- ⚠️ NOTA: Verifica que este plan_id sea el de pago único -->
+            <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" target="_blank" rel="noopener noreferrer" class="btn-gold-large" style="padding: 12px 32px;">Pagar ahora</a>
+          </div>
+          <div class="payment-option-card">
+            <i class="fab fa-paypal" aria-hidden="true"></i>
+            <h3>Pago Diferido</h3>
+            <p class="payment-price">3 x $1,000 MXN</p>
+            <!-- ⚠️ NOTA: Este link apunta al mismo plan_id que el de contado — deberías usar un plan_id diferente para suscripciones -->
+            <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" target="_blank" rel="noopener noreferrer" class="btn-gold-large" style="padding: 12px 32px;">Suscribirme</a>
+          </div>
+        </div>
+        <p class="reveal" style="font-size: 0.8rem; color: var(--text-medium);">
+          <i class="fas fa-lock gold-text" aria-hidden="true"></i> Pago 100% seguro · Recibirás confirmación y acceso al aula virtual
+        </p>
+      </div>
+    </section>
+
+    <!-- ================================
+         TRANSFERENCIA BANCARIA
+         ================================ -->
+    <section style="background: white; padding: 70px 0;" aria-label="Pago por transferencia bancaria">
+      <div class="container">
+        <div class="section-subtitle reveal">Otra forma de pago</div>
+        <h2 class="section-title reveal">Transferencia o Depósito Bancario</h2>
+        <div class="divider-gold reveal"></div>
+        <p class="text-center reveal" style="margin-bottom: 40px;">Realiza tu pago y envía tu comprobante por WhatsApp para confirmar tu inscripción.</p>
+        <div class="bank-card reveal">
+          <div class="bank-detail">
+            <p><strong><i class="fas fa-credit-card gold-text" aria-hidden="true"></i> Depósito / Tarjeta:</strong></p>
+            <p>
+              <span class="bank-number">4152 3145 9813 3463</span>
+              <button class="copy-btn" data-copy="4152314598133463" aria-label="Copiar número de tarjeta">Copiar</button>
             </p>
           </div>
-        </div>
-      </div>
-      <div style="flex: 1;">
-        <div class="contact-card">
-          <i class="fas fa-headset" style="font-size: 2rem; color: var(--gold); margin-bottom: 15px;"></i>
-          <h3 style="margin-bottom: 20px;">¿Tienes preguntas?</h3>
-          <div class="contact-item" style="margin-bottom: 20px;">
-            <a href="https://wa.me/5214921344124?text=Hola%20José,%20me%20interesa%20el%20Diplomado%20en%20Ciencia%20y%20Tecnología%20del%20Vino" target="_blank" class="btn-wa-gold"><i class="fab fa-whatsapp"></i> +52 492 134 4124</a>
+          <div class="bank-detail">
+            <p><strong><i class="fas fa-exchange-alt gold-text" aria-hidden="true"></i> CLABE Interbancaria:</strong></p>
+            <p style="font-size: 1.2rem; font-weight: 500;">
+              012 074 01558665643 7
+              <button class="copy-btn" data-copy="012074015586656437" aria-label="Copiar CLABE interbancaria">Copiar CLABE</button>
+            </p>
+            <p>BBVA México · José Guerrero Garfias</p>
           </div>
-          <div class="contact-item">
-            <i class="far fa-envelope" style="color: var(--gold); margin-right: 12px;"></i>
-            <a href="mailto:jmggarfias@gmail.com">jmggarfias@gmail.com</a>
-          </div>
-          <div style="margin-top: 20px; font-size: 0.85rem; color: var(--text-medium);">
-            <i class="fas fa-clock gold-text"></i> Respuesta en menos de 24 horas
+          <div class="bank-instructions">
+            <i class="fas fa-phone-alt gold-text" aria-hidden="true"></i>
+            <p>Envía tu comprobante por WhatsApp al <strong>+52 492 134 4124</strong> con tu nombre completo y correo.</p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+    </section>
 
-<!-- BENEFICIOS - PERSUASIVO -->
-<div class="section-light">
-  <div class="container">
-    <div class="section-subtitle">¿Por qué este diplomado es para ti?</div>
-    <div class="section-title">Transforma tu carrera con la ciencia del vino</div>
-    <div class="divider-gold"></div>
-    <div class="benefits-grid">
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Clases en vivo vía Zoom</h3><p>Todos los miércoles. Interactúa en tiempo real con el instructor y resuelve tus dudas al instante.</p><p style="margin-top: 10px; font-size: 0.85rem;"><i class="fas fa-video gold-text"></i> <strong>+ Grabaciones ilimitadas</strong></p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-flask"></i></div><h3>Enfoque práctico y real</h3><p>Análisis de casos reales en bodega, resolución de problemas fermentativos y control de calidad aplicado.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-certificate"></i></div><h3>Certificación con aval</h3><p>Diploma digital firmado por José Guerrero, respaldando tu especialización y conocimientos técnicos.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-chart-line"></i></div><h3>Proyecto final integrador</h3><p>Desarrolla tu propio plan de vinificación con retroalimentación personalizada del consultor.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-users"></i></div><h3>Networking profesional</h3><p>Conecta con colegas, enólogos y cerveceros de toda Latinoamérica en nuestra comunidad exclusiva.</p></div>
-      <div class="benefit-card"><div class="benefit-icon"><i class="fas fa-infinity"></i></div><h3>Acceso a las clases grabadas</h3><p>Todo el material, grabaciones y actualizaciones disponibles. Aprende a tu ritmo.</p></div>
-    </div>
-  </div>
-</div>
+  </main>
 
-<!-- INFO DIPLOMADO + PRECIO -->
-<div class="section">
-  <div class="container">
-    <div class="flex-between">
-      <div>
-        <div class="section-subtitle" style="text-align: left;">Programa completo</div>
-        <div class="section-title" style="text-align: left; font-size: 2.5rem;">Diplomado en Ciencia<br>y Tecnología del Vino</div>
-        <div class="divider-gold" style="margin: 20px 0 25px;"></div>
-        <p><i class="fas fa-calendar-alt gold-text"></i> <strong>12 semanas de inmersión</strong> · Modalidad online vía Zoom</p>
-        <p><i class="fas fa-calendar-week gold-text"></i> <strong>Clases en vivo:</strong> Todos los miércoles (2–3 horas por sesión)</p>
-        <p><i class="fas fa-clock gold-text"></i> <strong>Más de 50 horas lectivas</strong> entre clases en vivo, material complementario y asesorías</p>
-        <div class="zoom-info" style="margin-top: 20px;">
-          <i class="fab fa-zoom" style="color: var(--gold); font-size: 1.2rem;"></i>
-          <span><strong>Plataforma:</strong> Zoom · Interacción directa con el instructor</span>
+  <!-- ================================
+       FOOTER
+       ================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <i class="fas fa-wine-bottle gold-text" aria-hidden="true"></i> Academia del Vino
+          </div>
+          <p>José Guerrero Garfias · Químico, Consultor Vinícola & Cervecero</p>
+          <p style="font-size: 0.8rem;">Desde 2019 formando profesionales en la industria vitivinícola</p>
         </div>
-        <div class="start-date" style="margin-top: 20px;">
-          <i class="fas fa-calendar-check gold-text"></i> <strong>Próxima generación: 1 de abril de 2026</strong> · Cupos limitados
+        <div class="footer-links">
+          <a href="https://wa.me/5214921344124" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
+          </a>
+          <a href="mailto:jmggarfias@gmail.com">
+            <i class="far fa-envelope" aria-hidden="true"></i> Email
+          </a>
         </div>
       </div>
-      <div class="price-big">
-        <span style="font-size: 0.8rem; letter-spacing: 2px;">INVERSIÓN PROMOCIONAL</span>
-        <div><span class="price-original-big">$8,500 MXN</span> <span class="price-number">$3,000 MXN</span></div>
-        <div class="promo-badge">🔥 Ahorra $5,500 MXN</div>
-        <div class="urgent-badge">⏰ Válido solo hasta el 31 de marzo 2026</div>
-        <div style="font-size: 0.7rem; margin-top: 12px;">*Pago único · Certificado digital · Acceso vitalicio a videos</div>
-        <a href="#pago-paypal" class="btn-gold-large" style="margin-top: 20px; display: inline-block;">Aprovechar oferta</a>
+      <hr class="footer-divider">
+      <div class="footer-copy">
+        © 2026 Academia del Vino · Clases todos los miércoles vía Zoom · Inicio: 1 de abril 2026 · Oferta válida hasta el 31 de marzo 2026
       </div>
     </div>
+  </footer>
 
-    <!-- Opciones de pago -->
-    <div class="payment-options">
-      <div class="payment-option-card">
-        <i class="fas fa-credit-card"></i>
-        <h3>Pago de Contado</h3>
-        <p style="font-size: 2rem; font-weight: 700; color: var(--gold-dark); margin: 10px 0;">$3,000 MXN</p>
-        <p>Pago único · Acceso inmediato</p>
-        <p style="font-size: 0.75rem; color: var(--urgent-orange); margin-top: 8px;">⚡ Precio promocional</p>
-      </div>
-      <div class="payment-option-card">
-        <i class="fas fa-calendar-alt"></i>
-        <h3>Pago Diferido</h3>
-        <p style="font-size: 2rem; font-weight: 700; color: var(--gold-dark); margin: 10px 0;">3 pagos de $1,000 MXN</p>
-        <p>Mensualidades fijas · Sin intereses</p>
-        <p style="font-size: 0.75rem;">*Primer pago al inscribirte</p>
-      </div>
-    </div>
-  </div>
-</div>
+  <script>
+    /* ============================================
+       COUNTDOWN TIMER
+       targetDate se calcula UNA VEZ, no en cada tick
+       ============================================ */
+    const TARGET_DATE = new Date(2026, 2, 31, 23, 59, 59).getTime();
+    const countdownEl = document.getElementById('countdown');
+    const expiredEl = document.getElementById('expired-message');
+    const daysEl = document.getElementById('days');
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
 
-<!-- TEMARIO DESPLEGABLE -->
-<div class="section-light">
-  <div class="container">
-    <div class="section-subtitle">Plan de estudios</div>
-    <div class="section-title">Descubre todo lo que aprenderás</div>
-    <div class="divider-gold"></div>
-    <p class="text-center" style="max-width: 700px; margin: 0 auto 40px;">Haz clic en cada módulo para desplegar el contenido completo</p>
-    <div class="accordion">
-      <div class="accordion-item"><div class="accordion-header"><span>📅 MÓDULO I – Fundamentos Científicos de la Vitivinicultura</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><div class="week-title">🔬 Semana 1 – Introducción a la Ciencia del Vino</div><ul class="topic-list-module"><li>Historia técnica del vino · Composición química de la uva</li><li>Fisiología de la maduración · Variedades Vitis vinifera</li><li>Parámetros de calidad de vendimia</li></ul><div class="week-title">🍇 Semana 2 – Química del Mosto</div><ul class="topic-list-module"><li>Azúcares (glucosa/fructosa) · Ácidos orgánicos (tartárico, málico, cítrico)</li><li>pH y acidez total · Nitrógeno asimilable (YAN)</li><li>Compuestos fenólicos · Cálculo de alcohol probable</li></ul><div class="week-title">🦠 Semana 3 – Microbiología del Vino</div><ul class="topic-list-module"><li>Levaduras vínicas: Saccharomyces cerevisiae y no-Saccharomyces</li><li>Bacterias lácticas: Oenococcus oeni · Bacterias acéticas</li><li>Control microbiológico y prevención de contaminaciones</li></ul></div></div></div>
-      <div class="accordion-item"><div class="accordion-header"><span>🍷 MÓDULO II – Proceso de Elaboración del Vino</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><div class="week-title">⚙️ Semana 4 – Vinos Tintos</div><ul class="topic-list-module"><li>Recepción y molienda · Maceración y fermentación alcohólica</li><li>Control de temperatura · Remontados y bazuqueos</li><li>Descube y prensado</li></ul><div class="week-title">❄️ Semana 5 – Vinos Blancos y Rosados</div><ul class="topic-list-module"><li>Prensado directo · Desfangado · Fermentación controlada</li><li>Diferencias tecnológicas con tintos</li></ul><div class="week-title">🧪 Semana 6 – Fermentaciones</div><ul class="topic-list-module"><li>Cinética fermentativa · Factores que afectan la fermentación</li><li>Fermentación maloláctica · Problemas fermentativos y soluciones</li></ul><div class="week-title">🪵 Semana 7 – Crianza y Estabilización</div><ul class="topic-list-module"><li>Crianza en acero vs barrica · Tipos de madera</li><li>Estabilización tartárica y proteica · Filtración · Uso de SO₂</li></ul></div></div></div>
-      <div class="accordion-item"><div class="accordion-header"><span>🔬 MÓDULO III – Laboratorio de Calidad y Control</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><div class="week-title">🧫 Semana 8 – Microbiología Enológica</div><ul class="topic-list-module"><li>Medios de cultivo · Conteo en placa</li><li>Control de fermentaciones · Identificación de contaminaciones</li></ul><div class="week-title">⚗️ Semana 9 – Análisis Químico</div><ul class="topic-list-module"><li>Determinación de pH · Acidez total y volátil</li><li>Alcohol (% v/v) · Azúcares reductores · SO₂ libre y total</li></ul><div class="week-title">📊 Semana 10 – Control de Calidad</div><ul class="topic-list-module"><li>Parámetros de exportación · Defectos del vino</li><li>Estabilidad microbiológica · Trazabilidad · Gestión de calidad</li></ul></div></div></div>
-      <div class="accordion-item"><div class="accordion-header"><span>🧠 MÓDULO IV – Innovación, Defectos y Proyecto Final</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><div class="accordion-content-inner"><div class="week-title">🍾 Semana 11 – Defectos y Alteraciones</div><ul class="topic-list-module"><li>Brettanomyces · Picado acético · Refermentación en botella</li><li>Reducción y oxidación · Casos reales y resolución técnica</li></ul><div class="week-title">🎓 Semana 12 – Proyecto Final Integrador</div><ul class="topic-list-module"><li>Diseño de proceso de vinificación (tinto o blanco)</li><li>Plan de control microbiológico · Programa de análisis de laboratorio</li><li>Protocolo de estabilización y embotellado · Presentación online</li></ul></div></div></div>
-    </div>
-  </div>
-</div>
-
-<!-- STATS DE CONFIANZA -->
-<div class="container" style="margin: 60px auto;">
-  <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
-    <div class="stat-card"><div class="stat-number">12</div><div>semanas de inmersión</div></div>
-    <div class="stat-card"><div class="stat-number">+500</div><div>profesionales formados</div></div>
-    <div class="stat-card"><div class="stat-number">+50</div><div>horas lectivas</div></div>
-    <div class="stat-card"><div class="stat-number">100%</div><div>acceso a grabaciones</div></div>
-  </div>
-</div>
-
-<!-- PAYPAL -->
-<div id="pago-paypal" class="payment-section" style="background: linear-gradient(135deg, #FEFAF5, #FDF9F2); padding: 80px 0; text-align: center;">
-  <div class="container">
-    <div class="section-subtitle">Asegura tu lugar</div>
-    <h2 class="section-title" style="margin-bottom: 20px;">Pago con PayPal</h2>
-    <p style="max-width: 550px; margin: 0 auto 25px;">Elige la opción que mejor se adapte a ti. Cupos limitados, reserva ahora.</p>
-    <div class="payment-options" style="margin-bottom: 20px;">
-      <div class="payment-option-card"><i class="fab fa-paypal"></i><h3>Pago de Contado</h3><p style="font-size: 2rem; font-weight: 700;">$3,000 MXN</p><a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" target="_blank" class="btn-gold-large" style="padding: 12px 32px;">Pagar ahora</a></div>
-      <div class="payment-option-card"><i class="fab fa-paypal"></i><h3>Pago Diferido</h3><p style="font-size: 2rem; font-weight: 700;">3 x $1,000 MXN</p><a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-01N057771V076524UNGPZN4Y" target="_blank" class="btn-gold-large" style="padding: 12px 32px;">Suscribirme</a></div>
-    </div>
-    <p style="font-size: 0.8rem; color: var(--text-medium);"><i class="fas fa-lock gold-text"></i> Pago 100% seguro · Recibirás confirmación y acceso al aula virtual</p>
-  </div>
-</div>
-
-<!-- TRANSFERENCIA -->
-<div class="transfer-section" style="background: white; padding: 70px 0;">
-  <div class="container">
-    <div class="section-subtitle">Otra forma de pago</div>
-    <h2 class="section-title">Transferencia o Depósito Bancario</h2>
-    <div class="divider-gold"></div>
-    <p class="text-center" style="margin-bottom: 40px;">Realiza tu pago y envía tu comprobante por WhatsApp para confirmar tu inscripción.</p>
-    <div class="bank-card">
-      <div class="bank-detail"><p><strong><i class="fas fa-credit-card gold-text"></i> Depósito / Tarjeta:</strong></p><p style="font-size: 1.3rem; font-weight: 700; color: var(--gold-dark);">4152 3145 9813 3463</p><button class="copy-btn" onclick="copyToClipboard('4152314598133463')">Copiar</button></div>
-      <div class="bank-detail"><p><strong><i class="fas fa-exchange-alt gold-text"></i> CLABE Interbancaria:</strong></p><p style="font-size: 1.2rem; font-weight: 500;">012 074 01558665643 7</p><p>BBVA México · José Guerrero Garfias</p><button class="copy-btn" onclick="copyToClipboard('012074015586656437')">Copiar CLABE</button></div>
-      <div style="background: rgba(200,168,107,0.1); border-radius: 20px; padding: 20px; text-align: center; margin-top: 10px;">
-        <i class="fas fa-phone-alt gold-text"></i>
-        <p>Envía tu comprobante por WhatsApp al <strong>+52 492 134 4124</strong> con tu nombre completo y correo.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
-      <div><h3 style="font-family: 'Cormorant Garamond'; font-size: 1.8rem;"><i class="fas fa-wine-bottle gold-text"></i> Academia del Vino</h3><p>José Guerrero Garfias · Químico, Consultor Vinícola & Cervecero</p><p style="font-size: 0.8rem;">Desde 2019 formando profesionales en la industria vitivinícola</p></div>
-      <div style="display: flex; gap: 30px; align-items: center;">
-        <a href="https://wa.me/5214921344124" style="color: #E8DFD3; text-decoration: none;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="mailto:jmggarfias@gmail.com" style="color: #E8DFD3; text-decoration: none;"><i class="far fa-envelope"></i> Email</a>
-      </div>
-    </div>
-    <hr style="margin: 40px 0 25px; border-color: rgba(200,168,107,0.2);">
-    <div style="font-size: 0.7rem; text-align: center;">© 2026 Academia del Vino · Clases todos los miércoles vía Zoom · Inicio: 1 de abril 2026 · Oferta válida hasta el 31 de marzo 2026</div>
-  </div>
-</footer>
-
-<script>
-  // Countdown Timer
-  function updateCountdown() {
-    const targetDate = new Date(2026, 2, 31, 23, 59, 59);
-    const now = new Date();
-    const diff = targetDate - now;
-    if (diff <= 0) {
-      document.getElementById('countdown').style.display = 'none';
-      document.getElementById('expired-message').style.display = 'inline-block';
-      return;
+    function padZero(n) {
+      return String(n).padStart(2, '0');
     }
-    document.getElementById('days').textContent = String(Math.floor(diff / (1000*60*60*24))).padStart(2,'0');
-    document.getElementById('hours').textContent = String(Math.floor((diff % (1000*60*60*24)) / (1000*60*60))).padStart(2,'0');
-    document.getElementById('minutes').textContent = String(Math.floor((diff % (1000*60*60)) / (1000*60))).padStart(2,'0');
-    document.getElementById('seconds').textContent = String(Math.floor((diff % (1000*60)) / 1000)).padStart(2,'0');
-  }
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
 
-  // Accordion
-  document.querySelectorAll('.accordion-header').forEach(header => {
-    header.addEventListener('click', function() { this.parentElement.classList.toggle('active'); });
-  });
+    function updateCountdown() {
+      const diff = TARGET_DATE - Date.now();
 
-  function copyToClipboard(text) { navigator.clipboard.writeText(text).then(() => alert('Copiado: ' + text)); }
-</script>
+      if (diff <= 0) {
+        countdownEl.style.display = 'none';
+        expiredEl.style.display = 'inline-block';
+        return;
+      }
+
+      daysEl.textContent = padZero(Math.floor(diff / 86400000));
+      hoursEl.textContent = padZero(Math.floor((diff % 86400000) / 3600000));
+      minutesEl.textContent = padZero(Math.floor((diff % 3600000) / 60000));
+      secondsEl.textContent = padZero(Math.floor((diff % 60000) / 1000));
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* ============================================
+       ACCORDION — con atributos ARIA
+       ============================================ */
+    document.querySelectorAll('.accordion-header').forEach(function(header) {
+      header.addEventListener('click', function() {
+        const item = this.parentElement;
+        const isActive = item.classList.contains('active');
+        const expanded = !isActive;
+
+        // Actualizar estado ARIA
+        this.setAttribute('aria-expanded', String(expanded));
+
+        // Toggle clase activa
+        item.classList.toggle('active');
+      });
+
+      // Soporte de teclado: Enter y Space
+      header.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+    });
+
+    /* ============================================
+       TOAST NOTIFICATION — reemplaza alert()
+       ============================================ */
+    const toastEl = document.getElementById('toast');
+    let toastTimeout = null;
+
+    function showToast(message) {
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastEl.textContent = message;
+      toastEl.classList.add('show');
+      toastTimeout = setTimeout(function() {
+        toastEl.classList.remove('show');
+      }, 2500);
+    }
+
+    /* ============================================
+       COPY TO CLIPBOARD — con fallback
+       ============================================ */
+    document.querySelectorAll('[data-copy]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const text = this.getAttribute('data-copy');
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function() {
+            showToast('✓ Copiado al portapapeles');
+          }).catch(function() {
+            fallbackCopy(text);
+          });
+        } else {
+          fallbackCopy(text);
+        }
+      });
+    });
+
+    // Fallback para navegadores que no soportan clipboard API
+    function fallbackCopy(text) {
+      var textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast('✓ Copiado al portapapeles');
+      } catch (e) {
+        showToast('No se pudo copiar. Copia manualmente: ' + text);
+      }
+      document.body.removeChild(textarea);
+    }
+
+    /* ============================================
+       STICKY NAVIGATION — aparece al scroll
+       ============================================ */
+    const stickyNav = document.getElementById('stickyNav');
+    let lastScrollY = 0;
+    const NAV_THRESHOLD = 400;
+
+    function handleStickyNav() {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > NAV_THRESHOLD) {
+        stickyNav.classList.add('visible');
+      } else {
+        stickyNav.classList.remove('visible');
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
+    /* ============================================
+       SCROLL PROGRESS BAR
+       ============================================ */
+    const progressBar = document.getElementById('scrollProgress');
+
+    function updateProgressBar() {
+      var scrollTop = window.scrollY;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = progress + '%';
+    }
+
+    /* ============================================
+       SCROLL REVEAL — IntersectionObserver
+       ============================================ */
+    function initScrollReveal() {
+      var revealElements = document.querySelectorAll('.reveal');
+
+      if (!('IntersectionObserver' in window)) {
+        // Fallback: mostrar todo inmediatamente
+        revealElements.forEach(function(el) {
+          el.classList.add('revealed');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target); // Solo animar una vez
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealElements.forEach(function(el) {
+        observer.observe(el);
+      });
+    }
+
+    /* ============================================
+       SCROLL EVENT — throttled con rAF
+       ============================================ */
+    let ticking = false;
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          handleStickyNav();
+          updateProgressBar();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    /* ============================================
+       INIT
+       ============================================ */
+    handleStickyNav();
+    updateProgressBar();
+    initScrollReveal();
+  </script>
 </body>
 </html>
