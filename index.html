@@ -4,33 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Academia del Vino | José Guerrero – Diplomado en Ciencia y Tecnología del Vino</title>
-  <meta name="description" content="Diplomado en Ciencia y Tecnología del Vino. Formación con rigor químico y microbiológico. Clases en vivo vía Zoom. Precio promocional $3,000 MXN. Inicio 1 de abril 2026.">
+  <meta name="description" content="Diplomado en Ciencia y Tecnología del Vino. Formación con rigor químico y microbiológico. Clases en vivo vía Zoom los martes a 7:30 PM. Pago completo $3,500 MXN o 3 meses de $1,300. Inicio 1 de abril 2026.">
 
-  <!-- Preconnect: ahorra ~200ms en carga de recursos externos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Diplomado en Ciencia y Tecnología del Vino | Academia del Vino">
-  <meta property="og:description" content="12 semanas · +50 horas · Clases en vivo vía Zoom. De $8,500 a $4,500 MXN — oferta limitada.">
+  <meta property="og:description" content="12 semanas · +50 horas · Clases en vivo vía Zoom los martes a 7:30 PM. Pago completo $3,500 MXN o 3 pagos de $1,300.">
   <meta property="og:image" content="https://images.pexels.com/photos/2912108/pexels-photo-2912108.jpeg?auto=compress&cs=tinysrgb&w=1200">
   <meta property="og:locale" content="es_MX">
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Diplomado en Ciencia y Tecnología del Vino">
-  <meta name="twitter:description" content="Formación científica con José Guerrero. Precio promocional $4,500 MXN.">
+  <meta name="twitter:description" content="Formación científica con José Guerrero. Clases los martes a 7:30 PM. Pago completo $3,500 MXN o 3 meses de $1,300.">
   <meta name="twitter:image" content="https://images.pexels.com/photos/2912108/pexels-photo-2912108.jpeg?auto=compress&cs=tinysrgb&w=1200">
 
-  <!-- Structured Data: Course -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Course",
     "name": "Diplomado en Ciencia y Tecnología del Vino",
-    "description": "Formación con rigor químico y microbiológico. 12 semanas, +50 horas lectivas, clases en vivo vía Zoom.",
+    "description": "Formación con rigor químico y microbiológico. 12 semanas, +50 horas lectivas, clases en vivo vía Zoom los martes a 7:30 PM.",
     "provider": {
       "@type": "EducationalOrganization",
       "name": "Academia del Vino",
@@ -42,7 +38,7 @@
     },
     "offers": {
       "@type": "Offer",
-      "price": "4500",
+      "price": "3500",
       "priceCurrency": "MXN",
       "availability": "https://schema.org/LimitedAvailability",
       "validThrough": "2026-05-18T23:59:59"
@@ -58,9 +54,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
   <style>
-    /* ============================================
-       CUSTOM PROPERTIES
-       ============================================ */
     :root {
       --gold: #C8A86B;
       --gold-dark: #B28B4A;
@@ -75,9 +68,6 @@
       --transition-base: 0.3s ease;
     }
 
-    /* ============================================
-       RESET
-       ============================================ */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
@@ -86,7 +76,7 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 72px; /* Compensa nav sticky */
+      scroll-padding-top: 72px;
     }
 
     body {
@@ -96,10 +86,6 @@
       line-height: 1.6;
     }
 
-    /* ============================================
-       ACCESIBILIDAD
-       ============================================ */
-    /* Skip link — solo visible con teclado */
     .skip-link {
       position: absolute;
       top: -100%;
@@ -116,7 +102,6 @@
       top: 0;
     }
 
-    /* Focus visible para todos los interactivos */
     a:focus-visible,
     button:focus-visible,
     [tabindex]:focus-visible {
@@ -124,7 +109,6 @@
       box-shadow: var(--focus-ring);
     }
 
-    /* Reducir movimiento si el usuario lo prefiere */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -135,9 +119,6 @@
       .reveal { opacity: 1 !important; transform: none !important; }
     }
 
-    /* ============================================
-       SCROLL PROGRESS BAR
-       ============================================ */
     .scroll-progress {
       position: fixed;
       top: 0;
@@ -149,9 +130,6 @@
       transition: width 0.1s linear;
     }
 
-    /* ============================================
-       STICKY NAVIGATION
-       ============================================ */
     .sticky-nav {
       position: fixed;
       top: 0;
@@ -213,9 +191,6 @@
       background: #DAB87A;
     }
 
-    /* ============================================
-       CONTAINER & UTILITIES
-       ============================================ */
     .container {
       max-width: 1280px;
       margin: 0 auto;
@@ -224,9 +199,6 @@
     .gold-text { color: var(--gold); }
     .text-center { text-align: center; }
 
-    /* ============================================
-       TOAST NOTIFICATION
-       ============================================ */
     .toast {
       position: fixed;
       bottom: 100px;
@@ -250,9 +222,6 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    /* ============================================
-       WHATSAPP FLOATING BUTTON
-       ============================================ */
     .wa-fab {
       position: fixed;
       bottom: 28px;
@@ -288,9 +257,6 @@
       100% { transform: scale(1.5); opacity: 0; }
     }
 
-    /* ============================================
-       SCROLL REVEAL ANIMATIONS
-       ============================================ */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -301,9 +267,6 @@
       transform: translateY(0);
     }
 
-    /* ============================================
-       HERO BANNER
-       ============================================ */
     .hero-banner {
       position: relative;
       width: 100%;
@@ -393,9 +356,6 @@
       color: #e6d5b3;
     }
 
-    /* ============================================
-       BUTTONS
-       ============================================ */
     .btn-outline-light {
       background: var(--gold);
       border: none;
@@ -456,9 +416,6 @@
       }
     }
 
-    /* ============================================
-       TIMER SECTION
-       ============================================ */
     .timer-section {
       background: linear-gradient(135deg, #1E1B18 0%, #2A2520 100%);
       padding: 40px 0;
@@ -519,9 +476,6 @@
       display: inline-block;
     }
 
-    /* ============================================
-       SECTIONS
-       ============================================ */
     .section {
       padding: 80px 0;
       background: white;
@@ -564,9 +518,6 @@
       margin: 20px 0 25px;
     }
 
-    /* ============================================
-       AUTHOR CARD
-       ============================================ */
     .grid-2col {
       display: flex;
       flex-wrap: wrap;
@@ -624,9 +575,6 @@
       font-style: italic;
     }
 
-    /* ============================================
-       CONTACT CARD
-       ============================================ */
     .contact-card {
       background: white;
       border-radius: 32px;
@@ -659,9 +607,6 @@
       color: var(--text-medium);
     }
 
-    /* ============================================
-       BENEFITS GRID
-       ============================================ */
     .benefits-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -699,9 +644,6 @@
       font-size: 0.85rem;
     }
 
-    /* ============================================
-       ACCORDION
-       ============================================ */
     .accordion {
       margin-top: 30px;
       max-width: 1000px;
@@ -785,9 +727,6 @@
       font-size: 0.7rem;
     }
 
-    /* ============================================
-       PRICE BOX
-       ============================================ */
     .price-big {
       background: linear-gradient(135deg, #FEFAF3, #FFFCF8);
       border-radius: 32px;
@@ -835,9 +774,6 @@
       color: var(--text-medium);
     }
 
-    /* ============================================
-       FLEX LAYOUTS
-       ============================================ */
     .flex-between {
       display: flex;
       flex-wrap: wrap;
@@ -869,9 +805,6 @@
       margin-top: 20px;
     }
 
-    /* ============================================
-       PAYMENT OPTIONS
-       ============================================ */
     .payment-options {
       display: flex;
       flex-wrap: wrap;
@@ -915,10 +848,17 @@
     .payment-note--muted {
       color: var(--text-medium);
     }
+    .payment-savings {
+      background: rgba(199, 92, 62, 0.1);
+      color: var(--discount-red);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 8px;
+    }
 
-    /* ============================================
-       BANK CARD
-       ============================================ */
     .bank-card {
       background: var(--soft-gray);
       border-radius: 32px;
@@ -965,9 +905,6 @@
       margin-top: 10px;
     }
 
-    /* ============================================
-       STATS
-       ============================================ */
     .stats-row {
       display: flex;
       flex-wrap: wrap;
@@ -993,9 +930,6 @@
       color: var(--gold);
     }
 
-    /* ============================================
-       FOOTER
-       ============================================ */
     .site-footer {
       background: #141210;
       color: #E8DFD3;
@@ -1036,9 +970,6 @@
       text-align: center;
     }
 
-    /* ============================================
-       RESPONSIVE
-       ============================================ */
     @media (max-width: 900px) {
       .container { padding: 0 28px; }
       .stats-row { padding: 0 28px; }
@@ -1070,13 +1001,10 @@
 </head>
 <body>
 
-  <!-- Skip Navigation -->
   <a href="#main-content" class="skip-link">Ir al contenido principal</a>
 
-  <!-- Scroll Progress Bar -->
   <div class="scroll-progress" id="scrollProgress" role="presentation" aria-hidden="true"></div>
 
-  <!-- Sticky Navigation (aparece al hacer scroll) -->
   <nav class="sticky-nav" id="stickyNav" aria-label="Navegación principal">
     <div class="sticky-nav-inner">
       <a href="#" class="sticky-nav-brand"><i class="fas fa-wine-bottle" aria-hidden="true"></i> Academia del Vino</a>
@@ -1090,10 +1018,8 @@
     </div>
   </nav>
 
-  <!-- Toast Notification -->
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <!-- WhatsApp FAB -->
   <a href="https://wa.me/5214921344124?text=Hola%20Jos%C3%A9,%20me%20interesa%20el%20Diplomado%20en%20Ciencia%20y%20Tecnolog%C3%ADa%20del%20Vino"
      class="wa-fab"
      target="_blank"
@@ -1104,9 +1030,7 @@
 
   <main id="main-content">
 
-    <!-- ================================
-         HERO BANNER
-         ================================ -->
+    <!-- HERO BANNER -->
     <header class="hero-banner">
       <div class="hero-banner-content">
         <span class="hero-badge-gold">
@@ -1117,12 +1041,12 @@
         <p class="hero-subhead">Domina la química, microbiología y procesos de elaboración del vino con un enfoque científico y práctico. Formación impartida por el reconocido consultor José Guerrero.</p>
         <div class="price-card-hero">
           <div>
-            <div class="price-label">Precio regular</div>
+            <div class="price-label">Desde</div>
             <div>
-              <span class="price-original">$8,500 MXN</span>
-              <span class="price-amount">$4,500 MXN</span>
+              <span class="price-original">$3,900 MXN</span>
+              <span class="price-amount">$3,500 MXN</span>
             </div>
-            <div class="discount-badge" aria-hidden="true">🔥 Ahorra $4,000 MXN</div>
+            <div class="discount-badge" aria-hidden="true">🔥 Ahorra $400 MXN con pago completo</div>
           </div>
           <div>
             <a href="#pago-paypal" class="btn-outline-light">
@@ -1134,9 +1058,7 @@
       </div>
     </header>
 
-    <!-- ================================
-         TIMER
-         ================================ -->
+    <!-- TIMER -->
     <section class="timer-section" aria-label="Cuenta regresiva de oferta">
       <div class="container text-center">
         <div class="urgent-text">
@@ -1164,19 +1086,17 @@
           </div>
         </div>
         <div id="expired-message" style="display: none;" class="timer-expired" role="alert">
-          <i class="fas fa-clock" aria-hidden="true"></i> La oferta ha terminado · Precio regular $8,500 MXN
+          <i class="fas fa-clock" aria-hidden="true"></i> La oferta ha terminado · Precio regular $3,900 MXN
         </div>
         <p style="color: rgba(255,255,245,0.8); margin-top: 20px; font-size: 0.9rem;">
           <i class="fas fa-gift gold-text" aria-hidden="true"></i>
-          <strong>¡Última oportunidad!</strong> Inscríbete hoy y asegura tu lugar con el precio especial de
-          <strong class="gold-text">$4,500 MXN</strong>
+          <strong>¡Pago completo y ahorra!</strong> Solo
+          <strong class="gold-text">$3,500 MXN</strong> en lugar de $3,900 — o 3 meses de $1,300
         </p>
       </div>
     </section>
 
-    <!-- ================================
-         PERFIL + CONTACTO
-         ================================ -->
+    <!-- PERFIL + CONTACTO -->
     <section id="perfil" class="section" style="padding-top: 70px; padding-bottom: 40px;" aria-label="Perfil del instructor">
       <div class="container">
         <div class="grid-2col reveal">
@@ -1228,9 +1148,7 @@
       </div>
     </section>
 
-    <!-- ================================
-         BENEFICIOS
-         ================================ -->
+    <!-- BENEFICIOS -->
     <section id="beneficios" class="section-light" aria-label="Beneficios del diplomado">
       <div class="container">
         <div class="section-subtitle reveal">¿Por qué este diplomado es para ti?</div>
@@ -1240,7 +1158,7 @@
           <div class="benefit-card reveal">
             <div class="benefit-icon"><i class="fas fa-chalkboard-user" aria-hidden="true"></i></div>
             <h3>Clases en vivo vía Zoom</h3>
-            <p>Todos los miércoles. Interactúa en tiempo real con el instructor y resuelve tus dudas al instante.</p>
+            <p>Todos los martes a las 7:30 PM. Interactúa en tiempo real con el instructor y resuelve tus dudas al instante.</p>
             <p class="benefit-extra"><i class="fas fa-video gold-text" aria-hidden="true"></i> <strong>+ Grabaciones ilimitadas</strong></p>
           </div>
           <div class="benefit-card reveal">
@@ -1272,9 +1190,7 @@
       </div>
     </section>
 
-    <!-- ================================
-         INFO DIPLOMADO + PRECIO
-         ================================ -->
+    <!-- INFO DIPLOMADO + PRECIO -->
     <section id="programa" class="section" aria-label="Información del programa y precio">
       <div class="container">
         <div class="flex-between flex-between--start reveal">
@@ -1283,7 +1199,7 @@
             <h2 class="section-title section-title--left">Diplomado en Ciencia<br>y Tecnología del Vino</h2>
             <div class="divider-gold divider-gold--left"></div>
             <p class="info-item"><i class="fas fa-calendar-alt gold-text" aria-hidden="true"></i> <strong>12 semanas de inmersión</strong> · Modalidad online vía Zoom</p>
-            <p class="info-item"><i class="fas fa-calendar-week gold-text" aria-hidden="true"></i> <strong>Clases en vivo:</strong> Todos los miércoles (2–3 horas por sesión)</p>
+            <p class="info-item"><i class="fas fa-calendar-week gold-text" aria-hidden="true"></i> <strong>Clases en vivo:</strong> Todos los martes a las 7:30 PM (2–3 horas por sesión)</p>
             <p class="info-item"><i class="fas fa-clock gold-text" aria-hidden="true"></i> <strong>Más de 50 horas lectivas</strong> entre clases en vivo, material complementario y asesorías</p>
             <div class="zoom-info">
               <i class="fab fa-zoom" style="color: var(--gold); font-size: 1.2rem;" aria-hidden="true"></i>
@@ -1295,41 +1211,38 @@
             </div>
           </div>
           <div class="price-big">
-            <span style="font-size: 0.8rem; letter-spacing: 2px;">INVERSIÓN PROMOCIONAL</span>
+            <span style="font-size: 0.8rem; letter-spacing: 2px;">DESDE</span>
             <div>
-              <span class="price-original-big">$8,500 MXN</span>
-              <span class="price-number">$4,500 MXN</span>
+              <span class="price-original-big">$3,900 MXN</span>
+              <span class="price-number">$3,500 MXN</span>
             </div>
-            <div class="promo-badge" aria-hidden="true">🔥 Ahorra $4,000 MXN</div>
-            <div class="urgent-badge" aria-hidden="true">⏰ Válido solo hasta el 18 de mayo 2026</div>
-            <div class="price-disclaimer">*Pago único · Certificado digital · Acceso vitalicio a videos</div>
-            <a href="#pago-paypal" class="btn-gold-large" style="margin-top: 20px;">Aprovechar oferta</a>
+            <div class="promo-badge" aria-hidden="true">🔥 Ahorra $400 MXN pagando de contado</div>
+            <div class="urgent-badge" aria-hidden="true">⏰ O 3 meses de $1,300 MXN</div>
+            <div class="price-disclaimer">*Pago único o mensual · Certificado digital · Acceso vitalicio a videos</div>
+            <a href="#pago-paypal" class="btn-gold-large" style="margin-top: 20px;">Ver opciones de pago</a>
           </div>
         </div>
 
-        <!-- Opciones de pago -->
         <div class="payment-options reveal">
           <div class="payment-option-card">
             <i class="fas fa-credit-card" aria-hidden="true"></i>
-            <h3>Pago de Contado</h3>
-            <p class="payment-price">$4,500 MXN</p>
+            <h3>Pago Completo</h3>
+            <p class="payment-price">$3,500 MXN</p>
             <p>Pago único · Acceso inmediato</p>
-            <p class="payment-note">⚡ Precio promocional</p>
+            <div class="payment-savings">Ahorra $400 vs pago mensual</div>
           </div>
           <div class="payment-option-card">
             <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-            <h3>Pago Diferido</h3>
-            <p class="payment-price">3 pagos de $1,500 MXN</p>
-            <p>Mensualidades fijas · Sin intereses</p>
+            <h3>Pago Mensual</h3>
+            <p class="payment-price">$1,300 MXN <span style="font-size: 0.9rem; font-weight: 400;">/mes</span></p>
+            <p>3 pagos mensuales · $3,900 en total</p>
             <p class="payment-note payment-note--muted">*Primer pago al inscribirte</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================================
-         TEMARIO DESPLEGABLE
-         ================================ -->
+    <!-- TEMARIO DESPLEGABLE -->
     <section id="temario" class="section-light" aria-label="Temario del diplomado">
       <div class="container">
         <div class="section-subtitle reveal">Plan de estudios</div>
@@ -1338,14 +1251,8 @@
         <p class="text-center reveal" style="max-width: 700px; margin: 0 auto 40px;">Haz clic en cada módulo para desplegar el contenido completo</p>
 
         <div class="accordion reveal" role="list">
-          <!-- Módulo I -->
           <div class="accordion-item" role="listitem">
-            <button
-              class="accordion-header"
-              aria-expanded="false"
-              aria-controls="module-1-content"
-              id="module-1-header"
-            >
+            <button class="accordion-header" aria-expanded="false" aria-controls="module-1-content" id="module-1-header">
               <span>📅 MÓDULO I – Fundamentos Científicos de la Vitivinicultura</span>
               <i class="fas fa-chevron-down accordion-chevron" aria-hidden="true"></i>
             </button>
@@ -1373,14 +1280,8 @@
             </div>
           </div>
 
-          <!-- Módulo II -->
           <div class="accordion-item" role="listitem">
-            <button
-              class="accordion-header"
-              aria-expanded="false"
-              aria-controls="module-2-content"
-              id="module-2-header"
-            >
+            <button class="accordion-header" aria-expanded="false" aria-controls="module-2-content" id="module-2-header">
               <span>🍷 MÓDULO II – Proceso de Elaboración del Vino</span>
               <i class="fas fa-chevron-down accordion-chevron" aria-hidden="true"></i>
             </button>
@@ -1411,14 +1312,8 @@
             </div>
           </div>
 
-          <!-- Módulo III -->
           <div class="accordion-item" role="listitem">
-            <button
-              class="accordion-header"
-              aria-expanded="false"
-              aria-controls="module-3-content"
-              id="module-3-header"
-            >
+            <button class="accordion-header" aria-expanded="false" aria-controls="module-3-content" id="module-3-header">
               <span>🔬 MÓDULO III – Laboratorio de Calidad y Control</span>
               <i class="fas fa-chevron-down accordion-chevron" aria-hidden="true"></i>
             </button>
@@ -1443,14 +1338,8 @@
             </div>
           </div>
 
-          <!-- Módulo IV -->
           <div class="accordion-item" role="listitem">
-            <button
-              class="accordion-header"
-              aria-expanded="false"
-              aria-controls="module-4-content"
-              id="module-4-header"
-            >
+            <button class="accordion-header" aria-expanded="false" aria-controls="module-4-content" id="module-4-header">
               <span>🧠 MÓDULO IV – Innovación, Defectos y Proyecto Final</span>
               <i class="fas fa-chevron-down accordion-chevron" aria-hidden="true"></i>
             </button>
@@ -1474,9 +1363,7 @@
       </div>
     </section>
 
-    <!-- ================================
-         STATS
-         ================================ -->
+    <!-- STATS -->
     <div class="stats-row reveal" aria-label="Estadísticas del diplomado">
       <div class="stat-card">
         <div class="stat-number">12</div>
@@ -1496,39 +1383,38 @@
       </div>
     </div>
 
-    <!-- ================================
-         PAYPAL
-         ================================ -->
+    <!-- PAYPAL -->
     <section id="pago-paypal" style="background: linear-gradient(135deg, #FEFAF5, #FDF9F2); padding: 80px 0; text-align: center;" aria-label="Pago con PayPal">
       <div class="container">
         <div class="section-subtitle reveal">Asegura tu lugar</div>
-        <h2 class="section-title reveal">Pago con PayPal</h2>
-        <p class="reveal" style="max-width: 550px; margin: 0 auto 25px;">Elige la opción que mejor se adapte a ti. Cupos limitados, reserva ahora.</p>
+        <h2 class="section-title reveal">Elige tu forma de pago</h2>
+        <p class="reveal" style="max-width: 600px; margin: 0 auto 25px;">Pago completo y ahorra $400, o paga en 3 meses sin intereses. Cupos limitados, reserva ahora.</p>
         <div class="payment-options reveal" style="margin-bottom: 20px;">
-          <div class="payment-option-card">
+          <div class="payment-option-card" style="border-color: var(--gold); position: relative;">
+            <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--discount-red); color: white; padding: 4px 18px; border-radius: 30px; font-size: 0.72rem; font-weight: 600;">RECOMENDADO · AHORRAS $400</div>
             <i class="fab fa-paypal" aria-hidden="true"></i>
-            <h3>Pago de Contado</h3>
-            <p class="payment-price">$4,500 MXN</p>
-            <!-- ⚠️ NOTA: Verifica que este plan_id sea el de pago único -->
-            <a href="https://www.paypal.com/ncp/payment/PSZUGYVP3FUNW" target="_blank" rel="noopener noreferrer" class="btn-gold-large" style="padding: 12px 32px;">Pagar ahora</a>
+            <h3>Pago Completo</h3>
+            <p class="payment-price">$3,500 MXN</p>
+            <p>Pago único · Acceso inmediato completo</p>
+            <div class="payment-savings">En lugar de $3,900 — ahorras $400</div>
+            <a href="https://www.paypal.com/ncp/payment/LUGZPD6PGSZ32" target="_blank" rel="noopener noreferrer" class="btn-gold-large" style="padding: 12px 32px; margin-top: 12px;">Pagar $3,500 ahora</a>
           </div>
           <div class="payment-option-card">
             <i class="fab fa-paypal" aria-hidden="true"></i>
-            <h3>Pago Diferido</h3>
-            <p class="payment-price">3 x $1,500 MXN</p>
-            <!-- ⚠️ NOTA: Este link apunta al mismo plan_id que el de contado — deberías usar un plan_id diferente para suscripciones -->
-            <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-04L22345F51820832NG2Z5DA" target="_blank" rel="noopener noreferrer" class="btn-gold-large" style="padding: 12px 32px;">Suscribirme</a>
+            <h3>Pago Mensual</h3>
+            <p class="payment-price">$1,300 MXN <span style="font-size: 0.9rem; font-weight: 400;">/mes</span></p>
+            <p>3 pagos mensuales · Total $3,900 MXN</p>
+            <p class="payment-note payment-note--muted">*Primer pago al inscribirte · Se cobra automáticamente cada mes</p>
+            <a href="https://www.paypal.com/webapps/billing/plans/subscribe?plan_id=P-6M033890JE679162DNH6KT2A" target="_blank" rel="noopener noreferrer" class="btn-gold-large" style="padding: 12px 32px; margin-top: 12px;">Suscribirme $1,300/mes</a>
           </div>
         </div>
         <p class="reveal" style="font-size: 0.8rem; color: var(--text-medium);">
-          <i class="fas fa-lock gold-text" aria-hidden="true"></i> Pago 100% seguro · Recibirás confirmación y acceso al aula virtual
+          <i class="fas fa-lock gold-text" aria-hidden="true"></i> Pago 100% seguro con PayPal · Recibirás confirmación y acceso al aula virtual
         </p>
       </div>
     </section>
 
-    <!-- ================================
-         TRANSFERENCIA BANCARIA
-         ================================ -->
+    <!-- TRANSFERENCIA BANCARIA -->
     <section style="background: white; padding: 70px 0;" aria-label="Pago por transferencia bancaria">
       <div class="container">
         <div class="section-subtitle reveal">Otra forma de pago</div>
@@ -1554,6 +1440,7 @@
           <div class="bank-instructions">
             <i class="fas fa-phone-alt gold-text" aria-hidden="true"></i>
             <p>Envía tu comprobante por WhatsApp al <strong>+52 492 134 4124</strong> con tu nombre completo y correo.</p>
+            <p style="margin-top: 8px; font-size: 0.85rem;"><strong>Pago completo: $3,500 MXN</strong> · O primer mes de $1,300 MXN si eliges pago mensual</p>
           </div>
         </div>
       </div>
@@ -1561,9 +1448,7 @@
 
   </main>
 
-  <!-- ================================
-       FOOTER
-       ================================ -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
@@ -1585,16 +1470,12 @@
       </div>
       <hr class="footer-divider">
       <div class="footer-copy">
-        © 2026 Academia del Vino · Clases todos los miércoles vía Zoom · Inicio: 1 de abril 2026 · Oferta válida hasta el 31 de marzo 2026
+        © 2026 Academia del Vino · Clases todos los martes a las 7:30 PM vía Zoom · Inicio: 1 de abril 2026 · Pago completo $3,500 MXN o 3 meses de $1,300 MXN
       </div>
     </div>
   </footer>
 
   <script>
-    /* ============================================
-       COUNTDOWN TIMER
-       targetDate se calcula UNA VEZ, no en cada tick
-       ============================================ */
     const TARGET_DATE = new Date(2026, 4, 18, 23, 59, 59).getTime();
     const countdownEl = document.getElementById('countdown');
     const expiredEl = document.getElementById('expired-message');
@@ -1625,23 +1506,16 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    /* ============================================
-       ACCORDION — con atributos ARIA
-       ============================================ */
     document.querySelectorAll('.accordion-header').forEach(function(header) {
       header.addEventListener('click', function() {
         const item = this.parentElement;
         const isActive = item.classList.contains('active');
         const expanded = !isActive;
 
-        // Actualizar estado ARIA
         this.setAttribute('aria-expanded', String(expanded));
-
-        // Toggle clase activa
         item.classList.toggle('active');
       });
 
-      // Soporte de teclado: Enter y Space
       header.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -1650,9 +1524,6 @@
       });
     });
 
-    /* ============================================
-       TOAST NOTIFICATION — reemplaza alert()
-       ============================================ */
     const toastEl = document.getElementById('toast');
     let toastTimeout = null;
 
@@ -1665,9 +1536,6 @@
       }, 2500);
     }
 
-    /* ============================================
-       COPY TO CLIPBOARD — con fallback
-       ============================================ */
     document.querySelectorAll('[data-copy]').forEach(function(btn) {
       btn.addEventListener('click', function() {
         const text = this.getAttribute('data-copy');
@@ -1684,7 +1552,6 @@
       });
     });
 
-    // Fallback para navegadores que no soportan clipboard API
     function fallbackCopy(text) {
       var textarea = document.createElement('textarea');
       textarea.value = text;
@@ -1701,9 +1568,6 @@
       document.body.removeChild(textarea);
     }
 
-    /* ============================================
-       STICKY NAVIGATION — aparece al scroll
-       ============================================ */
     const stickyNav = document.getElementById('stickyNav');
     let lastScrollY = 0;
     const NAV_THRESHOLD = 400;
@@ -1720,9 +1584,6 @@
       lastScrollY = currentScrollY;
     }
 
-    /* ============================================
-       SCROLL PROGRESS BAR
-       ============================================ */
     const progressBar = document.getElementById('scrollProgress');
 
     function updateProgressBar() {
@@ -1732,14 +1593,10 @@
       progressBar.style.width = progress + '%';
     }
 
-    /* ============================================
-       SCROLL REVEAL — IntersectionObserver
-       ============================================ */
     function initScrollReveal() {
       var revealElements = document.querySelectorAll('.reveal');
 
       if (!('IntersectionObserver' in window)) {
-        // Fallback: mostrar todo inmediatamente
         revealElements.forEach(function(el) {
           el.classList.add('revealed');
         });
@@ -1750,7 +1607,7 @@
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('revealed');
-            observer.unobserve(entry.target); // Solo animar una vez
+            observer.unobserve(entry.target);
           }
         });
       }, {
@@ -1763,9 +1620,6 @@
       });
     }
 
-    /* ============================================
-       SCROLL EVENT — throttled con rAF
-       ============================================ */
     let ticking = false;
 
     window.addEventListener('scroll', function() {
@@ -1779,9 +1633,6 @@
       }
     }, { passive: true });
 
-    /* ============================================
-       INIT
-       ============================================ */
     handleStickyNav();
     updateProgressBar();
     initScrollReveal();
